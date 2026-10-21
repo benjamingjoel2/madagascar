@@ -1,0 +1,3 @@
+# Madagascar
+
+Madagascar travel project.
