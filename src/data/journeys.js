@@ -5,6 +5,7 @@
 export default [
   {
     slug: "rn7-slow-road",
+    photo: "rn7-south", // region whose photo leads the card
     name: "The slow road south",
     days: 16,
     stats: { roadHours: "32–38", flights: 1, effort: 4 },
@@ -29,6 +30,7 @@ export default [
   },
   {
     slug: "baobabs-and-tsingy",
+    photo: "tsingy-de-bemaraha", // region whose photo leads the card
     name: "Baobabs and the Tsingy",
     days: 11,
     stats: { roadHours: "20–24", flights: 2, effort: 5 },
@@ -52,6 +54,7 @@ export default [
   },
   {
     slug: "red-ruffed-rainforest",
+    photo: "andasibe", // region whose photo leads the card
     name: "Rainforest to the sea",
     days: 11,
     stats: { roadHours: "7–8 + boats", flights: 2, effort: 3 },
@@ -74,6 +77,7 @@ export default [
   },
   {
     slug: "lemurs-and-islands",
+    photo: "nosy-be", // region whose photo leads the card
     name: "Lemurs and the islands",
     days: 10,
     stats: { roadHours: "7–8", flights: 2, effort: 2 },

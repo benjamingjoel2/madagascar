@@ -383,7 +383,7 @@ const meter = (n, max = 5) =>
   `<span class="meter" aria-hidden="true">${Array.from({ length: max }, (_, i) => `<i class="${i < n ? "on" : ""}"></i>`).join("")}</span>`;
 
 function journeyCard(j, i) {
-  const lead = j.regions.find((s) => photos[s]) || j.regions[1];
+  const lead = photos[j.photo] ? j.photo : j.regions.find((s) => photos[s]) || j.regions[1];
   return `<article class="jcard reveal">
   <a class="jcard__a" href="/journeys/#${j.slug}">
     <div class="jcard__media">${photos[lead] ? img(photos[lead], { sizes: "(min-width: 60em) 45vw, 100vw" }) : contour(j.slug)}<span class="jcard__n">(${pad(i + 1)})</span></div>
