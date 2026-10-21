@@ -36,35 +36,35 @@ export const legs = [
   },
   {
     from: "antsirabe", to: "ranomafana", labelOffset: [30, 0], mode: "road", km: 250, hours: [6, 7], season: "all",
-    note: "Via Ambositra, then the RN25 down the escarpment.",
+    note: "South on the RN7 via Ambositra, then the side road down the escarpment.",
   },
   {
-    from: "ranomafana", to: "fianar", labelOffset: [42, 4], mode: "road", km: 65, hours: [1.5, 2], season: "all",
+    from: "ranomafana", to: "fianar", labelOffset: [42, 4], mode: "road", km: 65, hours: [2, 3], season: "all",
     note: "Winding road back up to the RN7.",
   },
   {
-    from: "fianar", to: "ambalavao", labelOffset: [-50, -1], mode: "road", km: 56, hours: [1, 1.5], season: "all",
+    from: "fianar", to: "ambalavao", labelOffset: [-50, -1], mode: "road", km: 56, hours: [1, 2], season: "all",
     note: "Anja Community Reserve is just south of Ambalavao.",
   },
   {
-    from: "ambalavao", to: "isalo", labelOffset: [14, 14], mode: "road", km: 240, hours: [5, 6], season: "all",
-    note: "Across the Horombe plateau via Ihosy.",
+    from: "ambalavao", to: "isalo", labelOffset: [14, 14], mode: "road", km: 225, hours: [4.5, 6], season: "all",
+    note: "Across the Horombe plateau via Ihosy. Many potholes.",
   },
   {
-    from: "isalo", to: "toliara", labelOffset: [8, 16], mode: "road", km: 240, hours: [4, 5], season: "all",
-    note: "Through Ilakaka (sapphire town) and the dry south-west.",
+    from: "isalo", to: "toliara", labelOffset: [8, 16], mode: "road", km: 245, hours: [5, 7], season: "all",
+    note: "The Sakaraha–Toliara stretch is badly potholed. Through Ilakaka, a former sapphire boomtown, and the dry south-west.",
   },
   {
-    from: "toliara", to: "ifaty", labelOffset: [-44, 2], mode: "road", km: 25, hours: [0.75, 1], season: "all",
-    note: "Short coastal hop. Road condition varies.",
+    from: "toliara", to: "ifaty", labelOffset: [-44, 2], mode: "road", km: 27, hours: [0.5, 0.75], season: "all",
+    note: "Paved coastal road (RN9).",
   },
   {
-    from: "tana", to: "miandrivazo", labelOffset: [-6, 14], mode: "road", km: 430, hours: [8, 9], season: "all",
+    from: "tana", to: "miandrivazo", labelOffset: [-6, 14], mode: "road", km: 390, hours: [9, 10], season: "all",
     note: "RN7 to Antsirabe, then west on the RN34. Usually the first night of a road trip to Morondava.",
   },
   {
-    from: "miandrivazo", to: "morondava", labelOffset: [26, 14], mode: "road", km: 240, hours: [4.5, 5.5], season: "all",
-    note: "RN35 across the western plains.",
+    from: "miandrivazo", to: "morondava", labelOffset: [26, 14], mode: "road", km: 265, hours: [4, 5], season: "all",
+    note: "Across the western plains to the coast.",
   },
   {
     from: "morondava", to: "bekopaka", labelOffset: [-58, -2], mode: "track", km: 200, hours: [8, 10], season: "dry",
@@ -77,25 +77,25 @@ export const legs = [
   // Domestic flights. Schedules change often and some routes are not daily.
   {
     from: "tana", to: "morondava", bend: 70, labelOffset: [-4, -4], mode: "flight", hours: [1, 1], season: "all",
-    flightSaves: "Saves about a day and a half each way compared with 12–14 hours on the road.",
+    flightSaves: "Saves about a day and a half each way compared with 13–15 hours on the road. Often only about one flight a week.",
   },
   {
-    from: "toliara", to: "tana", bend: -95, mode: "flight", hours: [1.25, 1.25], season: "all",
+    from: "toliara", to: "tana", bend: -95, mode: "flight", hours: [1.25, 1.5], season: "all",
     flightSaves: "Saves about two and a half days of driving back up the RN7.",
   },
   {
-    from: "tana", to: "nosybe", mode: "flight", hours: [1.5, 2], season: "all",
+    from: "tana", to: "nosybe", mode: "flight", hours: [1.5, 1.75], season: "all",
     flightSaves: "There is no sensible road option for a holiday: this flight saves two days or more.",
   },
   {
-    from: "tana", to: "maroantsetra", mode: "flight", hours: [1.5, 2.5], season: "all",
-    flightSaves: "The only practical way in. Some flights stop on the way.",
+    from: "tana", to: "maroantsetra", mode: "flight", hours: [1.25, 2.5], season: "all",
+    flightSaves: "The only practical way in. Often about one flight a week, and some stop at Toamasina on the way.",
   },
 ];
 
 // Long road alternatives to show alongside flights (never drawn on the map).
 export const roadAlternatives = [
-  { from: "Antananarivo", to: "Morondava", hours: "12–14 hours", days: "2 days with a night in Miandrivazo" },
+  { from: "Antananarivo", to: "Morondava", hours: "13–15 hours", days: "2 days with a night in Miandrivazo" },
   { from: "Toliara", to: "Antananarivo", hours: "about 20 hours", days: "2½–3 days on the RN7" },
   { from: "Antananarivo", to: "Nosy Be", hours: "20+ hours plus a ferry", days: "not recommended" },
 ];

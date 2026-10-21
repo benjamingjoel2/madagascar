@@ -18,7 +18,7 @@ export default [
     highlights: [
       "The Rova (Queen's Palace) and views over the city",
       "Analakely market",
-      "Ambohimanga, the royal hill and UNESCO site north of the city",
+      "Ambohimanga, the royal hill and UNESCO World Heritage Site about 24 km north-east of the city",
     ],
     gettingThere:
       "Ivato International Airport. Allow at least an hour from the airport into the centre, longer at rush hour.",
@@ -57,9 +57,9 @@ export default [
     lon: 47.46,
     lat: -21.26,
     summary:
-      "Steep, misty rainforest on the eastern escarpment, home to the golden bamboo lemur, a species described to science only in 1987.",
+      "Steep, misty rainforest on the eastern escarpment, home to the golden bamboo lemur, a species discovered here in 1986 and described to science in 1987.",
     body: [
-      "Ranomafana National Park was created after the golden bamboo lemur was found here. Trails are steep and muddy, and the reward is some of the richest wildlife in the highlands: several bamboo lemur species, Milne-Edwards' sifaka, red-bellied lemurs and an exceptional range of frogs.",
+      "Ranomafana National Park opened in 1991, after the golden bamboo lemur was discovered here and the greater bamboo lemur rediscovered. Trails are steep and muddy, and the reward is some of the richest wildlife in the highlands: several bamboo lemur species, Milne-Edwards' sifaka, red-bellied lemurs and an exceptional range of frogs.",
       "The village sits in a river gorge with hot springs (the name means 'hot water'). Allow at least two full days: one for the main trails and one for a night walk and the less-visited areas.",
       "It sits a short detour off the RN7, so it fits naturally into a south-bound overland journey.",
     ],
@@ -69,7 +69,7 @@ export default [
       "Frogs and leaf-tailed geckos on night walks",
     ],
     gettingThere:
-      "By road only. About 6–7 hours from Antsirabe, or 1½–2 hours from Fianarantsoa.",
+      "By road only. About 6–7 hours from Antsirabe, or 2–3 hours from Fianarantsoa.",
     bestMonths: "September to December",
     access: "open",
     accessNote:
@@ -85,7 +85,7 @@ export default [
       "The paved Route Nationale 7 runs about 950 km from Antananarivo to Toliara. It passes rice terraces, craft towns, rainforest, granite domes and sandstone canyons before it reaches the spiny south-west.",
     body: [
       "This is the classic first trip to Madagascar, and the one that best explains the brand name: it is long, it is slow, and the landscape changes completely every day. The road is paved but narrow and potholed in places, and it is shared with zebu carts, trucks and taxi-brousses.",
-      "Stops along the way include Antsirabe (a spa town with pousse-pousse rickshaws), Ambositra (Zafimaniry woodcarving), Fianarantsoa (the old upper town), Ambalavao (silk weaving and handmade Antemoro paper) and Anja Community Reserve, where ring-tailed lemurs sun themselves on granite boulders.",
+      "Stops along the way include Antsirabe (a spa town with pousse-pousse rickshaws), Ambositra (Zafimaniry woodcarving), Fianarantsoa (the old upper town), Ambalavao (silk weaving and handmade Antemoro paper) and Anja Community Reserve, a community-run reserve just south of Ambalavao where ring-tailed lemurs are easy to see.",
       "Most people drive the RN7 one way and fly back from Toliara to Antananarivo. Driving back the same way adds about two and a half days.",
     ],
     highlights: [
@@ -119,7 +119,7 @@ export default [
       "Multi-day treks with camping",
     ],
     gettingThere:
-      "By road on the RN7: roughly 5–6 hours from Ambalavao, or 4–5 hours from Toliara.",
+      "By road on the RN7: roughly 4½–6 hours from Ambalavao, or 5–7 hours from Toliara.",
     bestMonths: "April to November",
     access: "open",
     accessNote:
@@ -141,10 +141,10 @@ export default [
     highlights: [
       "Sunset and sunrise on the Avenue of the Baobabs",
       "Fossa watching at Kirindy",
-      "The 'Baobabs Amoureux' (two entwined trees)",
+      "The 'Baobabs Amoureux', two entwined baobabs of a different species a few kilometres away",
     ],
     gettingThere:
-      "Fly from Antananarivo in about an hour, or drive in roughly 12–14 hours (better split over two days via Miandrivazo).",
+      "Fly from Antananarivo in about an hour (often only about once a week), or drive in roughly 13–15 hours, split over two days via Miandrivazo.",
     bestMonths: "April to November (fossa most active around October and November)",
     access: "seasonal",
     accessNote:
@@ -160,7 +160,7 @@ export default [
       "A vast karst plateau eroded into razor-sharp limestone pinnacles, crossed by suspension bridges and via ferrata. It is one of the most extraordinary places on the island, and one of the hardest to reach.",
     body: [
       "The park is reached from Bekopaka, a village on the Manambolo river. Access from Morondava is a long day on rough track with a ferry crossing on the Tsiribihina and another on the Manambolo.",
-      "The Petits Tsingy are close to Bekopaka. The Grand Tsingy, with the famous bridges and ladders, is a further drive of about an hour and a half on track. There is also a canoe trip through the Manambolo gorge.",
+      "The Petits Tsingy are close to Bekopaka. The Grand Tsingy, with the famous bridges and ladders, is 17 km further on a rough track: allow one to two hours. There is also a canoe trip through the Manambolo gorge.",
       "Decken's sifaka, a white sifaka, is often seen near the park entrance.",
     ],
     highlights: [
@@ -173,7 +173,7 @@ export default [
     bestMonths: "June to October",
     access: "closed-wet",
     accessNote:
-      "Usually closed for part of the wet season (roughly December to April), when the track floods and the Grand Tsingy circuits shut. Opening dates change every year with the rains, so we confirm them before we book.",
+      "Usually closed in the wet season, roughly December to April, when the track floods. It can close from mid-November if the rivers rise early. The Petits Tsingy usually reopen first; the Grand Tsingy circuits typically run from about June to early or mid-November. Dates change every year with the rains, so we confirm them before we book.",
   },
   {
     slug: "nosy-be",
@@ -185,8 +185,8 @@ export default [
       "Volcanic islands off the north-west coast, with warm water, small reefs, the black lemurs of Lokobe and, in season, whale sharks offshore.",
     body: [
       "Nosy Be is the most developed beach area in Madagascar. It makes a good end to a wildlife trip if you pick the quieter islands around it, such as Nosy Komba, Nosy Sakatia or Nosy Iranja.",
-      "Lokobe, a protected area on the south-east of the island, holds black lemurs (only the males are black; females are russet-brown), panther chameleons and tiny leaf chameleons.",
-      "Boat trips run to snorkelling sites around Nosy Tanikely. Whale sharks are often seen offshore in roughly the last quarter of the year, and humpback whales pass through in the austral winter.",
+      "Lokobe, a protected area on the south-east of the island (only part of it is open to visitors), holds black lemurs (only the males are black; females are russet-brown), panther chameleons and tiny leaf chameleons.",
+      "Boat trips run to snorkelling sites around Nosy Tanikely. Whale sharks are often seen offshore in roughly the last quarter of the year, and humpback whales are around from about July to November.",
     ],
     highlights: [
       "Black lemurs and panther chameleons in Lokobe",
@@ -194,7 +194,7 @@ export default [
       "Whale sharks offshore (seasonal)",
     ],
     gettingThere:
-      "Fly from Antananarivo to Fascene airport (about 1 hour 30 minutes to 2 hours). Driving from Tana is not practical for a holiday.",
+      "Fly from Antananarivo to Fascene airport (about 1½–1¾ hours). Driving from Tana is not practical for a holiday.",
     bestMonths: "April to December",
     access: "open",
     accessNote:
@@ -207,11 +207,11 @@ export default [
     lon: 50.0,
     lat: -15.7,
     summary:
-      "Madagascar's largest protected rainforest, running down to the sea on a remote peninsula in the north-east. It is the only home of the red ruffed lemur, and there is no road in.",
+      "Madagascar's largest national park, a rainforest running down to the sea on a remote peninsula in the north-east. It is the only home of the red ruffed lemur, and there is no road in.",
     body: [
       "Masoala National Park is reached by boat from Maroantsetra, across the Bay of Antongil. A handful of simple, eco-minded lodges sit on the beaches at the forest edge. Expect rain in any month.",
-      "Rewards include the red ruffed lemur, white-fronted brown lemurs, helmeted and other vangas, leaf-tailed geckos and tomato frogs. Nosy Mangabe, an island reserve in the bay, is one of the more reliable places to look for the aye-aye at night, though sightings are never guaranteed.",
-      "Humpback whales come into the Bay of Antongil to breed in the austral winter.",
+      "Rewards include the red ruffed lemur, white-fronted brown lemurs, helmeted and other vangas, leaf-tailed geckos and tomato frogs. Nosy Mangabe, an island reserve in the bay, is one of the better places to look for the aye-aye at night. It means camping on the island overnight, and sightings are never guaranteed.",
+      "Humpback whales come into the Bay of Antongil to breed, from about June to October.",
     ],
     highlights: [
       "Red ruffed lemur (found only here)",
@@ -235,16 +235,16 @@ export default [
       "Fishing villages on a lagoon north of Toliara, next to a strange spiny forest of octopus trees and fat-trunked baobabs. It is the natural place to finish an RN7 journey.",
     body: [
       "The spiny forest around Ifaty and Mangily is a different world from the rainforest. Early-morning walks in the community reserves look for endemic birds such as the long-tailed ground roller and the subdesert mesite, alongside reptiles and grey mouse lemurs at night.",
-      "The coast here is sheltered by a reef. Vezo fishermen sail outrigger pirogues, and humpback whales pass offshore in the austral winter.",
+      "The coast here is sheltered by a barrier reef that encloses a long lagoon. Vezo fishermen sail outrigger pirogues across it.",
       "From Ifaty most people transfer back to Toliara for the flight to Antananarivo.",
     ],
     highlights: [
       "Spiny forest at dawn",
-      "Radiated tortoises at a tortoise conservation centre",
-      "Vezo pirogue trips and whale watching (seasonal)",
+      "Radiated tortoises at the Village des Tortues in Mangily",
+      "Vezo pirogue trips on the lagoon",
     ],
     gettingThere:
-      "About 25 km north of Toliara: allow about 45 minutes to 1 hour. Toliara has flights to Antananarivo.",
+      "About 27 km north of Toliara on a paved road: allow 30–45 minutes. Toliara has flights to Antananarivo.",
     bestMonths: "April to November",
     access: "open",
     accessNote: "Open all year. December to March is hot and humid, with cyclone risk.",

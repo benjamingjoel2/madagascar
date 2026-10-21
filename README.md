@@ -36,8 +36,10 @@ src/data/
   journal.js          ← journal posts (HTML bodies)
   seasons.js          ← month-by-month notes for "When to go"
   photos.js           ← Unsplash photos, credits and the location evidence for each
+  sources.js          ← references behind the facts (shown on /sources/)
 src/assets/
-  styles.css          ← all styles (colour tokens are injected from site.config.js)
+  styles.css          ← all styles (colour and font tokens are injected from site.config.js)
+  site.js             ← header state, mobile menu, scroll reveals
   map.js              ← route planner on the driving-time map
   wildlife.js         ← park, month and type filters on the wildlife guide
   enquiry.js          ← enquiry form validation and sending
@@ -55,7 +57,7 @@ Everything brand-specific is in **`site.config.js`**:
 - `brand`: name, tagline, description and the story behind the name (shown on About).
 - `contact`: email, phone, WhatsApp (optional), address and office hours.
 - `palette`: every colour on the site. After changing colours, run `npm run build && npm run check`. The check fails if any text and background pair the site uses drops below WCAG AA.
-- `fonts`: Google Fonts families and stylesheet URL.
+- `fonts`: `display` (headlines and the wordmark), `body`, `mono` (small labels), plus the Google Fonts stylesheet URL.
 - `siteUrl`: used for canonical links and the sitemap.
 
 The alternative brand, **Indri Journeys**, needs only `brand.name`, `brand.shortName`, `brand.tagline` and `brand.nameStory` changed. The logo mark is a simple baobab (`LOGO` in `build.mjs`); swap that SVG too if you re-brand.
@@ -95,7 +97,11 @@ The rule: **only use a photo when its location matches the place it's used for**
 },
 ```
 
-Fill in `evidence` with how you confirmed the location: the photo's Unsplash location tag, or the photographer's own description naming the place. Unsplash's AI-generated alt text does not count. Until a region has a photo, it shows a clearly labelled placeholder. All credits are also listed on `/credits/`.
+Fill in `evidence` with how you confirmed the location: the photo's Unsplash location tag, or the photographer's own description naming the place. Unsplash's AI-generated alt text does not count. Until a region has a photo, it shows generated contour-line artwork with the region's coordinates and a "photo to come" note. All credits are also listed on `/credits/`.
+
+### Add or update a source
+
+Add the claim and its URLs to `src/data/sources.js`. They appear on `/sources/`. Keep FACTS-TO-VERIFY.md in step with them.
 
 ### Add a journal post
 

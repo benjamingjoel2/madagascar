@@ -38,26 +38,33 @@ export default {
   siteUrl: "https://baobab-road.vercel.app",
 
   // Palette. Every text/background pair used on the site is checked against
-  // WCAG AA by `npm run check` (scripts/check-contrast.mjs).
+  // WCAG AA by `npm run check` (scripts/check.mjs).
   palette: {
-    laterite: "#A3391C", // laterite red earth: buttons, links, accents
-    lateriteDark: "#7A2A14", // hover state, small text on cream
-    rainforest: "#1E4A33", // rainforest green: header, footer, panels
-    rainforestLight: "#DCE8DF", // pale green tint for chips and table rows
-    bark: "#4A3427", // baobab bark brown: body text
-    barkLight: "#EADFD3", // pale bark tint for cards
-    gold: "#E2A43A", // sunset gold: highlights (only ever under dark text)
-    goldLight: "#F8E7C4", // pale gold for callouts
-    cream: "#FBF6EE", // page background
-    ink: "#241912", // headings and strongest text
+    laterite: "#B4441F", // laterite red earth: accents, buttons
+    lateriteDark: "#8E3215", // links and small accent text on paper
+    lateriteLight: "#F08A5D", // laterite on dark backgrounds
+    rainforest: "#1F4A35", // rainforest green: panels, "good" cells
+    rainforestLight: "#DCE6DC", // pale green tint
+    night: "#0E1712", // deep forest night: dark sections, header, footer
+    nightSoft: "#1A2620", // raised surfaces on dark
+    bark: "#4A3427", // baobab bark brown: body text on paper
+    barkLight: "#E7DCCD", // pale bark: hairlines, cards
+    gold: "#E7A93E", // sunset gold: highlights (only under dark text, or as text on night)
+    goldLight: "#F6E6C3", // pale gold for callouts
+    cream: "#F5EFE4", // paper: page background
+    mist: "#C9C4B8", // muted text on dark
+    muted: "#74645A", // muted text on paper
+    ink: "#1C140E", // headings on paper
     white: "#FFFFFF",
-    sea: "#CFE3E6", // sea colour on the driving-time map
+    sea: "#16241D", // sea on the driving-time map (dark)
+    land: "#2C3A30", // land on the driving-time map
   },
 
-  // Fonts come from Google Fonts. Swap the families here and update `href` to match.
+  // Fonts come from Google Fonts. Change the families here and update `href` to match.
   fonts: {
-    heading: "'Fraunces', Georgia, 'Times New Roman', serif",
-    body: "'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif",
-    href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap",
+    display: "'Instrument Serif', 'Times New Roman', serif",
+    body: "'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif",
+    mono: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace",
+    href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
   },
 };

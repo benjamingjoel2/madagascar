@@ -10,7 +10,7 @@ export default [
     body: `
 <p>Antsirabe to Ranomafana is about 250 km. On a European motorway that is two and a half hours. In Madagascar it takes six or seven, and nobody is doing anything wrong.</p>
 <p>The main roads are paved but narrow, with potholes, single-lane bridges and steep switchbacks where the highlands drop to the rainforest. They are shared with zebu carts, cyclists, children walking to school, and taxi-brousses stopping wherever a passenger waves. Driving after dark is unwise, so each road day has to fit into daylight.</p>
-<p>That is why our <a href="/map/">driving-time map</a> shows hours first and kilometres second, and why it marks the places where a domestic flight saves a day. Flying back from Toliara instead of driving the RN7 twice saves about two and a half days. Flying to Morondava saves about a day and a half each way.</p>
+<p>That is why our <a href="/map/">driving-time map</a> shows hours first and kilometres second, and why it marks the places where a domestic flight saves a day. Flying back from Toliara instead of driving the RN7 twice saves about two and a half days. Flying to Morondava saves about a day and a half each way, although that route often has only about one flight a week.</p>
 <p>Flights cost more than the road and their schedules can change at short notice, so we usually fly one way and drive the other. That way you still see the country change from the window.</p>
 <h2>Our rule of thumb</h2>
 <p>No more than one full road day in a row without a two-night stop after it. Nobody comes to Madagascar to sit in a car. But the drive is part of the journey, and it goes better when you know what you are in for.</p>
@@ -21,11 +21,11 @@ export default [
     title: "Planning around the wet season",
     date: "2026-09-15",
     excerpt:
-      "From roughly December to March, much of Madagascar is hot, wet and at risk of cyclones. Some places close. Others are at their best.",
+      "From roughly November or December to March, much of Madagascar is hot, wet and at risk of cyclones. Some places close. Others are at their best.",
     body: `
-<p>Madagascar's rainy season runs roughly from December to March, with cyclones possible in that period, especially on the east coast and in the north. That changes what is possible.</p>
+<p>Madagascar's rainy season runs roughly from November or December to March, and into April in wet years. The official cyclone season lasts from mid-November to the end of April, and the highest risk is from January to March, especially on the east coast and in the north. That changes what is possible.</p>
 <h2>What usually closes</h2>
-<p>The <a href="/regions/tsingy-de-bemaraha/">Tsingy de Bemaraha</a> is usually closed for part of the wet season, because the track from Morondava floods and the Grand Tsingy circuits shut. Exact dates change every year with the rains, so we confirm them before we book anything. Kirindy and Masoala become hard to reach, and some lodges close.</p>
+<p>The <a href="/regions/tsingy-de-bemaraha/">Tsingy de Bemaraha</a> is usually closed in the wet season, because the track from Morondava floods and the river crossings become impassable. Exact dates change every year with the rains, so we confirm them before we book anything. Kirindy and Masoala become hard to reach, and some lodges close.</p>
 <h2>What stays open, and can be wonderful</h2>
 <p>The eastern rainforests (Andasibe and Ranomafana) stay open. They are wet and muddy, but frogs and reptiles are at their most active and the forest is loud with life. Many lemurs have young from around September to November, so late in the dry season and the start of the rains is a lovely time.</p>
 <h2>Our honest advice</h2>

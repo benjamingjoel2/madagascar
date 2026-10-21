@@ -26,33 +26,42 @@ const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m);
 
 // [foreground, background, minimum, where it is used]
 const pairs = [
+  // text on paper
   ["bark", "cream", 4.5, "body text"],
-  ["ink", "cream", 4.5, "headings"],
-  ["laterite", "cream", 4.5, "links"],
-  ["laterite", "white", 4.5, "links on cards"],
-  ["lateriteDark", "cream", 4.5, "kickers, link hover"],
-  ["lateriteDark", "barkLight", 4.5, "kickers on bark sections"],
-  ["lateriteDark", "white", 4.5, "kickers on cards"],
-  ["white", "laterite", 4.5, "buttons, CTA band, closed cells"],
-  ["white", "lateriteDark", 4.5, "button hover"],
-  ["white", "rainforest", 4.5, "header, page heads"],
-  ["gold", "rainforest", 4.5, "kickers on green"],
-  ["goldLight", "rainforest", 4.5, "links on green"],
-  ["ink", "gold", 4.5, "gold buttons, flight labels"],
-  ["ink", "goldLight", 4.5, "callouts"],
-  ["bark", "goldLight", 3, "'possible' cell symbol (non-text)"],
-  ["rainforest", "rainforestLight", 4.5, "'open' badges"],
+  ["ink", "cream", 4.5, "headings, light pills"],
+  ["muted", "cream", 4.5, "second half of statements"],
+  ["laterite-dark", "cream", 4.5, "links, labels"],
+  ["laterite-dark", "white", 4.5, "links and labels on cards"],
+  ["laterite-dark", "barkLight", 4.5, "labels on bark sections"],
+  ["laterite-dark", "goldLight", 4.5, "labels in callouts"],
+  ["bark", "white", 4.5, "text on cards and tables"],
+  ["bark", "barkLight", 4.5, "text on bark sections"],
   ["ink", "barkLight", 4.5, "chips"],
-  ["bark", "white", 4.5, "text on cards"],
-  ["barkLight", "ink", 4.5, "footer text"],
-  ["goldLight", "ink", 4.5, "footer links"],
-  ["ink", "sea", 4.5, "map labels"],
-  ["rainforest", "cream", 3, "'good' cells (non-text)"],
-  ["laterite", "cream", 3, "'closed' cells (non-text)"],
-  ["gold", "ink", 3, "focus ring"],
+  ["ink", "goldLight", 4.5, "callouts, highlighted month"],
+  ["ink", "gold", 4.5, "gold pills, flight tags"],
+  ["white", "laterite", 4.5, "closed tags, form errors"],
+  ["rainforest", "rainforestLight", 4.5, "'open' tags"],
+  // text on dark
+  ["cream", "night", 4.5, "header, headings on dark"],
+  ["mist", "night", 4.5, "body text on dark"],
+  ["mist", "nightSoft", 4.5, "text on dark cards"],
+  ["gold", "night", 4.5, "labels and accents on dark"],
+  ["gold", "nightSoft", 4.5, "labels on dark cards"],
+  ["goldLight", "night", 4.5, "links on dark"],
+  ["cream", "rainforest", 4.5, "dark pill hover"],
+  ["cream", "sea", 4.5, "map labels"],
+  ["cream", "land", 4.5, "map labels over land"],
+  // non-text (3:1)
+  ["rainforest", "white", 3, "'good' dots"],
+  ["laterite", "white", 3, "'closed' marks, meters"],
+  ["laterite-light", "sea", 3, "roads on the map"],
+  ["laterite-light", "land", 3, "roads over land"],
+  ["gold", "land", 3, "flights on the map"],
+  ["gold", "night", 3, "focus ring"],
 ];
 for (const [fg, bg, min, use] of pairs) {
-  const r = ratio(p[fg], p[bg]);
+  const key = (k) => k.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  const r = ratio(p[key(fg)], p[key(bg)]);
   if (r < min) fail(`Contrast ${fg} on ${bg} is ${r.toFixed(2)}:1, needs ${min}:1 (${use})`);
   else console.log(`✓ ${fg} on ${bg}: ${r.toFixed(2)}:1 (${use})`);
 }
