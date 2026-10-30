@@ -17,12 +17,19 @@ export default {
       "The name comes from the Avenue of the Baobabs near Morondava, and from the long overland drives that Madagascar is made for.",
   },
 
-  // Placeholder contact details. Replace them before launch (see FACTS-TO-VERIFY.md).
+  // One address per brand ({brandname}@tourground.com). No phone numbers or messaging apps on the site.
+  // The business address is the coworking space the owner has approved: Le BOP, Antananarivo
+  // (listing: https://www.coworker.com/madagascar/antananarivo/le-bop).
   contact: {
-    email: "hello@example.com",
-    phone: "+00 0000 000000",
-    whatsapp: "", // e.g. "+261340000000". Leave empty to hide.
-    address: "Postal address to be confirmed",
+    email: "baobabroad@tourground.com",
+    address: {
+      name: "Le BOP coworking",
+      street: "Villa Chti'mi, Androhibe",
+      locality: "Antananarivo",
+      postalCode: "101",
+      country: "Madagascar",
+      countryCode: "MG",
+    },
     officeHours: "Monday to Friday, 09:00–17:00 (East Africa Time, UTC+3)",
   },
 
@@ -35,7 +42,7 @@ export default {
   },
 
   // Production URL, used for canonical links and the sitemap. No trailing slash.
-  siteUrl: "https://baobab-road.vercel.app",
+  siteUrl: "https://baobabroad.tourground.com",
 
   // Palette. Every text/background pair used on the site is checked against
   // WCAG AA by `npm run check` (scripts/check.mjs).
@@ -60,11 +67,11 @@ export default {
     land: "#2C3A30", // land on the driving-time map
   },
 
-  // Fonts come from Google Fonts. Change the families here and update `href` to match.
+  // Fonts are self-hosted from src/assets/fonts (latin and latin-ext subsets, woff2), declared in
+  // src/assets/fonts/fonts.css. To change a family, replace the files and that CSS, then update the stacks here.
   fonts: {
     display: "'Instrument Serif', 'Times New Roman', serif",
     body: "'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif",
     mono: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace",
-    href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
   },
 };

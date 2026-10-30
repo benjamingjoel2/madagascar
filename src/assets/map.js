@@ -3,6 +3,7 @@
   var form = document.getElementById("planner");
   if (!form) return;
   var graph = JSON.parse(form.getAttribute("data-graph"));
+  var T = JSON.parse(form.getAttribute("data-i18n"));
   var out = document.getElementById("planner-out");
   var legEls = document.querySelectorAll(".map-svg .leg");
   var FLIGHT_OVERHEAD = 3; // check-in, transfers and waiting, in hours
@@ -14,6 +15,7 @@
     if (f === 1) { w += 1; s = ""; }
     return (w === 0 && s ? "" : w) + s;
   }
+  function fill(s, v) { return s.replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }); }
   function range(a, b) { return Math.abs(a - b) < 0.01 ? fmt(a) + " h" : fmt(a) + "–" + fmt(b) + " h"; }
 
   // Dijkstra over legs (both directions). Returns {stops, legIdx, min, max} or null.
@@ -60,28 +62,28 @@
 
   function update() {
     var from = form.from.value, to = form.to.value, dry = form.dry.checked;
-    if (from === to) { out.innerHTML = "<p>Choose two different places.</p>"; highlight([]); return; }
+    if (from === to) { out.innerHTML = "<p>" + T.same + "</p>"; highlight([]); return; }
     var road = route(from, to, false, dry);
     var any = route(from, to, true, dry);
     var html = "";
     if (road) {
       var days = Math.ceil(road.max / DRIVE_DAY);
-      html += '<div class="route"><h3>By road</h3><p class="big">' + range(road.min, road.max) + "</p><p>" + names(road) +
-        "</p><p>About " + days + " day" + (days > 1 ? "s" : "") + " of driving at up to " + DRIVE_DAY + " hours a day.</p></div>";
+      html += '<div class="route"><h3>' + T.road + '</h3><p class="big">' + range(road.min, road.max) + "</p><p>" + names(road) +
+        "</p><p>" + fill(days > 1 ? T.dayN : T.day1, { n: days, h: DRIVE_DAY }) + "</p></div>";
     } else {
-      html += '<div class="route"><h3>By road</h3><p>No practical road route' + (!dry ? " in the wet season" : "") + ". " +
-        (!dry ? "The Tsingy track is usually impassable in the rains." : "") + "</p></div>";
+      html += '<div class="route"><h3>' + T.road + "</h3><p>" + (dry ? T.noRoad : T.noRoadWet) + "</p></div>";
     }
     if (any && any.flights > 0) {
-      html += '<div class="route route--fly"><h3>Using a domestic flight</h3><p class="big">' + range(any.min, any.max) +
-        "</p><p>" + names(any) + "</p><p>Includes about " + FLIGHT_OVERHEAD + " hours per flight for check-in and transfers.</p></div>";
+      html += '<div class="route route--fly"><h3>' + T.fly + '</h3><p class="big">' + range(any.min, any.max) +
+        "</p><p>" + names(any) + "</p><p>" + fill(T.overhead, { h: FLIGHT_OVERHEAD }) + "</p></div>";
       if (road) {
         var saved = (road.min + road.max) / 2 - (any.min + any.max) / 2;
-        if (saved >= 6) html += '<p class="saves"><strong>Flying saves about ' + fmt(Math.round(saved)) + " hours</strong>, which is roughly " +
-          (saved >= DRIVE_DAY * 1.5 ? Math.round(saved / DRIVE_DAY) + " days" : "a day") + " on the road.</p>";
+        if (saved >= 6) html += '<p class="saves">' + (saved >= DRIVE_DAY * 1.5
+          ? fill(T.savesDays, { h: fmt(Math.round(saved)), n: Math.round(saved / DRIVE_DAY) })
+          : fill(T.savesDay, { h: fmt(Math.round(saved)) })) + "</p>";
       }
     }
-    if (!road && !any) html = "<p>No route between these places in the season you chose.</p>";
+    if (!road && !any) html = "<p>" + T.none + "</p>";
     out.innerHTML = html;
     highlight((road && !(any && any.flights)) ? road.legIdx : (any ? any.legIdx.concat(road ? road.legIdx : []) : []));
   }

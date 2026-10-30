@@ -133,7 +133,7 @@ File: `src/data/wildlife.js`. The likelihood and month strings remain **estimate
 
 `site.config.js`
 
-- [ ] Email, phone, WhatsApp, postal address and office hours are **placeholders**.
+- [ ] Email is `baobabroad@tourground.com`; business address is Le BOP coworking, Villa Chti'mi, Androhibe, 101 Antananarivo (from coworker.com's listing): confirm the exact address with the space. Office hours are a placeholder. The site deliberately shows no phone or WhatsApp.
 - [ ] `siteUrl`: set it to the real domain.
 - [ ] Enquiry form: set `enquiry.formEndpoint`, or confirm that the mailto fallback is acceptable. The success message promises a reply "within two working days" (`src/assets/enquiry.js`).
 - [ ] Add a privacy notice. The form collects personal data.
