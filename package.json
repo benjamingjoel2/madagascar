@@ -1,0 +1,15 @@
+{
+  "name": "baobab-road",
+  "private": true,
+  "type": "module",
+  "description": "Static travel website for Madagascar. No runtime dependencies.",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node scripts/check.mjs",
+    "dev": "node build.mjs && node scripts/serve.mjs",
+    "i18n": "node scripts/i18n.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
