@@ -5,7 +5,8 @@
 // Rejected example: Unsplash results for "Masoala" are mostly from the
 // Masoala rainforest hall at Zürich Zoo, so they are not used.
 //
-// Unsplash licence: free to use; we credit every photographer anyway.
+// Unsplash licence: free to use, no attribution required, so no credits are shown on the site.
+// Photographer details are kept here for the record.
 // Images are hotlinked from images.unsplash.com as Unsplash's API guidelines ask.
 
 export default {

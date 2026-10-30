@@ -77,6 +77,15 @@ strong{font-weight:600;color:var(--ink)}
 .hdr__end{display:flex;align-items:center;gap:.5rem}
 @media (max-width:40em){.hdr__in{gap:.75rem}.brand{font-size:1.3rem}.hdr .pill--gold{padding:.5rem .8rem;font-size:.88rem}.menu-btn__t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.menu-btn{padding:.65rem .8rem}.hero__top{display:none}}
 .hdr .pill--gold{padding:.55rem .95rem}
+/* Language selector: in the header from 40em, in the menu below that */
+.lang{list-style:none;margin:0;padding:0;display:flex;align-items:center;font:500 .75rem/1 var(--font-mono);letter-spacing:.04em}
+.lang li+li::before{content:"·";color:var(--mist);padding:0 .1rem}
+.lang a{display:inline-block;padding:.45rem .3rem;color:var(--mist);text-decoration:none;border-bottom:1px solid transparent}
+.lang a:hover{color:var(--gold)}
+.lang a[aria-current]{color:var(--cream);border-bottom-color:var(--gold)}
+.lang--hdr{margin-right:.4rem}
+.nav__lang{display:none}
+@media (max-width:40em){.lang--hdr{display:none}.nav__lang{display:block}.js .nav li.nav__lang{border-top:1px solid rgba(245,239,228,.12);padding-top:1rem}.lang--menu{font-size:.95rem}.lang--menu a{padding:.6rem .5rem}}
 .nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.2rem 1.4rem}
 .nav a{color:var(--cream);text-decoration:none;font-size:.92rem;font-weight:500;display:inline-flex;align-items:baseline;gap:.35rem;padding:.35rem 0;border-bottom:1px solid transparent}
 .nav a:hover{color:var(--gold)}

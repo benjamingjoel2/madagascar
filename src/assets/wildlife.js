@@ -3,7 +3,9 @@
   var form = document.getElementById("wl-filters");
   if (!form) return;
   var summary = document.getElementById("wl-summary");
-  var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var T = JSON.parse(form.getAttribute("data-i18n"));
+  var MONTHS = T.months;
+  function fill(s, v) { return s.replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }); }
   var parks = document.querySelectorAll(".park");
 
   // Pre-select from URL, e.g. /wildlife/?month=2
@@ -30,14 +32,14 @@
       p.querySelectorAll("tbody tr[data-type]").forEach(function (tr) {
         if (tr.hidden) return;
         if (tr.querySelector('[data-month="' + month + '"]').classList.contains("cell--good") && !acc.classList.contains("cell--closed"))
-          good.push(tr.querySelector(".sp-name").textContent + " (" + name.split(" (")[0].replace(" National Park", "") + ")");
+          good.push(tr.querySelector(".sp-name").textContent + " (" + p.getAttribute("data-short") + ")");
       });
     });
     if (month === "") { summary.innerHTML = ""; return; }
-    var html = "<strong>In " + MONTHS[month] + ":</strong><ul>";
-    if (closed.length) html += "<li>Usually closed: " + closed.join(", ") + "</li>";
-    if (difficult.length) html += "<li>Hard to reach: " + difficult.join(", ") + "</li>";
-    html += "<li>" + (good.length ? "Good chances: " + good.join(", ") : "No species with a good chance for this selection.") + "</li></ul>";
+    var html = "<strong>" + fill(T.inMonth, { month: MONTHS[month] }) + "</strong><ul>";
+    if (closed.length) html += "<li>" + fill(T.closed, { list: closed.join(", ") }) + "</li>";
+    if (difficult.length) html += "<li>" + fill(T.hard, { list: difficult.join(", ") }) + "</li>";
+    html += "<li>" + (good.length ? fill(T.good, { list: good.join(", ") }) : T.none) + "</li></ul>";
     summary.innerHTML = html;
   }
   form.addEventListener("change", update);

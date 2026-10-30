@@ -35,7 +35,9 @@ src/data/
   stays.js            ← stays (all names are placeholders)
   journal.js          ← journal posts (HTML bodies)
   seasons.js          ← month-by-month notes for "When to go"
-  photos.js           ← Unsplash photos, credits and the location evidence for each
+  photos.js           ← Unsplash photos and the location evidence for each
+  legal.js            ← privacy policy, booking terms and cookie policy
+src/i18n/             ← translations: fr.tsv, de.tsv, es.tsv (+ same.tsv for names that never change)
   sources.js          ← references behind the facts (shown on /sources/)
 src/assets/
   styles.css          ← all styles (colour and font tokens are injected from site.config.js)
@@ -48,6 +50,27 @@ scripts/check.mjs     ← contrast, data and link checks
 scripts/serve.mjs     ← local preview server
 ```
 
+## Languages
+
+The site is built in English (at `/`), French (`/fr/`), German (`/de/`) and Spanish (`/es/`). Every visible string, in `build.mjs` and in `src/data`, is written in English and passed through `t()`; the translations live in `src/i18n/{fr,de,es}.tsv`, one line per string (`<id><TAB><translation>`). The id is a short hash of the English text, so **when you change English copy, the build fails until the new string is translated**:
+
+```bash
+npm run i18n -- fr   # lists the strings French is missing, with their ids
+npm run i18n         # every string side by side, and ids that are no longer used
+```
+
+The language selector (EN · FR · DE · ES) links to the same page in each language; there is no automatic redirect. Each page has `hreflang` alternates and a canonical URL, and the sitemap lists all four languages.
+
+## Speed
+
+Fonts are self-hosted (`src/assets/fonts`, woff2) and the display font is preloaded; the CSS is minified into one file; asset URLs carry a content hash (`?v=…`) so `vercel.json` can cache `/assets/` for a year. Unsplash images are requested at 480/800/1200/1600 px with `auto=format&q=70`, lazy-loaded below the fold, and the hero image is preloaded with `fetchpriority="high"`.
+
+## Before launch
+
+- Have a lawyer review the privacy policy, booking terms and cookie policy (`src/data/legal.js`).
+- Replace the `[Placeholder]` stay names with confirmed partner lodges, and add a photo of each named lodge only from its media kit or a Creative Commons source (see `IMAGES-NEEDED.md`).
+- Confirm the business address with the coworking space and work through `FACTS-TO-VERIFY.md`.
+
 ## Common edits
 
 ### Re-brand
@@ -55,7 +78,7 @@ scripts/serve.mjs     ← local preview server
 Everything brand-specific is in **`site.config.js`**:
 
 - `brand`: name, tagline, description and the story behind the name (shown on About).
-- `contact`: email, phone, WhatsApp (optional), address and office hours.
+- `contact`: email (`baobabroad@tourground.com`), business address (Le BOP coworking, Antananarivo) and office hours. The site shows no phone numbers, messaging apps or social links.
 - `palette`: every colour on the site. After changing colours, run `npm run build && npm run check`. The check fails if any text and background pair the site uses drops below WCAG AA.
 - `fonts`: `display` (headlines and the wordmark), `body`, `mono` (small labels), plus the Google Fonts stylesheet URL.
 - `siteUrl`: used for canonical links and the sitemap.
@@ -83,21 +106,21 @@ Edit `src/data/wildlife.js`. Each park has:
 
 ### Add a photo
 
-The rule: **only use a photo when its location matches the place it's used for**, and credit it. Add an entry to `src/data/photos.js`, keyed by the region slug (or `hero` for the home page):
+The rule: **only use a photo when its location matches the place it's used for**. Unsplash photos need no on-site credit, so none is shown; Creative Commons photos would need one (add a credits page back if you use any). Add an entry to `src/data/photos.js`, keyed by the region slug (or `hero` for the home page):
 
 ```js
 "isalo": {
   src: "https://images.unsplash.com/photo-…",   // urls.raw from the Unsplash API, without the query string
   width: 4000, height: 2667, color: "#a0522d",
   alt: "What the photo shows",
-  location: "Isalo National Park",               // shown in the credit
+  location: "Isalo National Park",               // kept for the record (not shown)
   photographer: "Name", photographerUrl: "https://unsplash.com/@user",
   unsplashUrl: "https://unsplash.com/photos/…",
   evidence: "Photographer's location tag: Isalo National Park, Madagascar",
 },
 ```
 
-Fill in `evidence` with how you confirmed the location: the photo's Unsplash location tag, or the photographer's own description naming the place. Unsplash's AI-generated alt text does not count. Until a region has a photo, it shows generated contour-line artwork with the region's coordinates and a "photo to come" note. All credits are also listed on `/credits/`.
+Fill in `evidence` with how you confirmed the location: the photo's Unsplash location tag, or the photographer's own description naming the place. Unsplash's AI-generated alt text does not count. Until a region has a photo, it shows generated contour-line artwork with the region's coordinates and a "photo to come" note.
 
 ### Add or update a source
 
