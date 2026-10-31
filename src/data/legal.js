@@ -113,7 +113,7 @@ export default [
         "We also do not use local storage, session storage or any other technology to store information on your device.",
       ]],
       ["Content from other services", [
-        "Photographs on this site are loaded from the Unsplash image service (images.unsplash.com). To deliver an image, that service receives your IP address and browser details, as any web server does. It does not set cookies through this website.",
+        "Photographs on this site are loaded from our image delivery provider. To deliver an image, that service receives your IP address and browser details, as any web server does. It does not set cookies through this website.",
         "Our fonts are served from this website itself, so no font provider receives your details.",
         "If you send an enquiry, the form either opens your own email app or sends your answers to our form service; nothing is stored in your browser.",
       ]],
