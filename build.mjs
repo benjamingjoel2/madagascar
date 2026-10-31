@@ -62,7 +62,7 @@ const pathFor = (loc, path) => (loc === DEFAULT_LOCALE ? path : `/${loc}${path}`
 
 // ── helpers ──────────────────────────────────────────────────
 const esc = (s = "") =>
-  String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 
 const fmtH = (h) => {
   const whole = Math.floor(h);
