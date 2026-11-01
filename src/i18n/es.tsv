@@ -718,7 +718,6 @@ ea77ffe8	2. Presupuestos
 2e043631	5. Cambios por su parte
 937f200a	Si desea cambiar su viaje después de confirmarlo, comuníquenoslo por escrito lo antes posible. Haremos lo posible por ayudarle, pero los cambios dependen de la disponibilidad y pueden costar más. Los gastos que apliquen los proveedores y cualquier diferencia de precio se le repercutirán.
 64a41604	6. Cancelación por su parte
-0e53bbc1	Puede cancelar en cualquier momento por escrito. Los gastos de cancelación dependen de la antelación con que cancele y de las condiciones de los lodges, aerolíneas y demás proveedores que hayamos reservado para usted. Los gastos aplicables a su viaje figuran en su presupuesto y en su confirmación antes de pagar. Le recomendamos un seguro de viaje que cubra la cancelación desde el día de la reserva.
 94a5e886	7. Cambios y cancelación por nuestra parte
 f97aba5a	Madagascar es un país de carreteras lentas, tiempo cambiante y vuelos nacionales que a veces cambian de horario. Puede que tengamos que ajustar un itinerario, por ejemplo cambiando una ruta, un lodge o un vuelo. Si un cambio es significativo, se lo comunicaremos lo antes posible y le ofreceremos una alternativa comparable o, si el cambio es importante, el reembolso de la parte del viaje afectada.
 2cd0b2a5	No cancelaremos su viaje después de la confirmación salvo que sea necesario, por ejemplo por circunstancias inevitables y extraordinarias como ciclones, inundaciones, disturbios o recomendaciones oficiales de viaje. Si cancelamos, le ofreceremos un viaje alternativo o el reembolso íntegro de lo que nos haya pagado.
@@ -733,8 +732,6 @@ ac6f0956	11. Sus responsabilidades
 2f86c4d0	Siga las indicaciones de los guías de los parques y de los conductores, respete las leyes y costumbres locales y cumpla las normas de los parques sobre la fauna (no dar de comer, no tocar, no usar grabaciones). Podemos dar por terminado el viaje de cualquier persona cuyo comportamiento ponga en riesgo a los demás.
 724885ed	12. Reclamaciones
 e31178da	Si algo va mal durante su viaje, dígaselo a su conductor o contacte con nosotros de inmediato para que intentemos solucionarlo sobre la marcha. Si aun así no queda satisfecho, escríbanos a <a href="mailto:{email}">{email}</a> en los 28 días siguientes a su regreso y le responderemos por escrito.
-14bfad3b	13. Legislación aplicable
-96a9bacf	Estas condiciones se rigen por la ley aplicable al contrato entre usted y {brand}. Cualquier controversia se someterá a los tribunales competentes según esa ley. Si es usted consumidor, mantiene la protección que le otorga la ley del país donde reside.
 72b34e9a	{brand}, {address}. Correo electrónico: <a href="mailto:{email}">{email}</a>.
 df26c53d	Qué cookies y tecnologías similares utiliza la web de {brand}.
 12e8ac78	Esta web no utiliza cookies. Esta página explica qué significa eso y qué se almacena o se carga cuando la visita.
@@ -770,3 +767,27 @@ d48f4d6b	La fauna aquí, <em>mes a mes</em>.
 0ea923de	Guía de fauna completa
 fce9ab55	Todas las entradas del diario
 f92bcb6a	Madagascar
+# Legal pages, 1 November 2026
+524cf50b	Cookies
+e36798d3	Cuando la normativa de protección de datos lo exige, estas transferencias se apoyan en garantías reconocidas, como las cláusulas contractuales tipo de la Comisión Europea (con el anexo del Reino Unido), decisiones de adecuación o el hecho de que la transferencia sea necesaria para ejecutar el contrato que nos ha pedido organizar. Puede pedirnos los detalles.
+a75f6754	Registros del servidor: nuestro proveedor de alojamiento los conserva durante un breve periodo (no más de 30 días) por motivos de seguridad y después se eliminan.
+dcf75191	Menores
+eec720d7	Este sitio y nuestros servicios están dirigidos a adultos. No recogemos a sabiendas datos personales directamente de menores de 16 años. Los datos de los niños que viajan en familia nos los facilita su padre, madre o tutor, y solo se usan para planificar y realizar el viaje.
+615043a5	Cambios en esta política
+b37456c4	Contacto
+c79ff079	Salvo que su presupuesto indique otra cosa, el depósito es del 30 % del precio total y el saldo se paga 60 días antes de la salida; si reserva con menos de 60 días de antelación, el precio total se paga al reservar.
+fec9b0a7	Puede cancelar en cualquier momento por escrito; la cancelación surte efecto el día en que la recibimos. Como comprometemos dinero con los proveedores en su nombre, salvo que su presupuesto indique otra cosa se aplican los siguientes gastos, en porcentaje del precio total: más de 60 días antes de la salida, pérdida del depósito (30 %); de 60 a 31 días, 50 %; de 30 a 15 días, 75 %; 14 días o menos, o si no se presenta, 100 %.
+00e0487c	Cuando las condiciones de un proveedor son más estrictas, por ejemplo vuelos, permisos o estancias de temporada alta no reembolsables, su presupuesto lo indicará y se aplicarán esos gastos. Su seguro de viaje puede cubrir los gastos de cancelación.
+bdef5f7b	No somos responsables de cambios, retrasos o cancelaciones causados por circunstancias inusuales e imprevisibles ajenas a nuestro control cuyas consecuencias no habrían podido evitarse ni aun actuando con toda la diligencia debida, como guerras o amenazas de guerra, disturbios, terrorismo, catástrofes naturales, fenómenos meteorológicos extremos, epidemias, incendios, cierres de aeropuertos o puertos, huelgas, y medidas de las autoridades o recomendaciones oficiales de no viajar. Si un caso de fuerza mayor impide su viaje, le reembolsaremos todo lo que podamos recuperar de los proveedores y le ayudaremos a reorganizarlo.
+356e79bd	Estas condiciones, y cualquier controversia derivada de ellas, se rigen por las leyes de Madagascar, y son competentes los tribunales de Madagascar. Si reside en otro país, ello no le priva de los derechos imperativos que le reconozca la legislación de consumo de su país de residencia, y también puede acudir a sus tribunales. Siempre intentaremos resolver primero cualquier reclamación de mutuo acuerdo.
+709a2322	Nombre
+3deb7456	Tipo
+615043a5	Cambios en esta política
+6410c79d	Si el sitio empieza a guardar algo nuevo, actualizaremos antes esta página y la fecha de arriba.
+35c45b44	Este sitio está alojado en Vercel Inc., que trata los datos técnicos necesarios para servir cada página, como su dirección IP y los datos de su navegador, en registros de servidor de corta duración. El formulario de consulta abre un correo prerrellenado en su propio programa de correo, de modo que sus datos nos llegan como un correo normal cuando usted lo envía.
+09504f27	Este sitio no instala cookies. Más detalles en nuestra <a href="/cookies/">política de cookies</a>.
+9046db42	13. Fuerza mayor
+700f5a1c	14. Protección de datos
+f990cea6	15. Ley aplicable
+de821768	Utilizamos sus datos personales únicamente como se describe en nuestra <a href="/privacy/">política de privacidad</a>.
+e7e53d2a	<table class="legal-table"><thead><tr><th scope="col">Nombre</th><th scope="col">Finalidad</th><th scope="col">Duración</th><th scope="col">Tipo</th></tr></thead><tbody><tr><td>Ninguno</td><td>Este sitio no instala cookies ni usa el almacenamiento del navegador</td><td>No procede</td><td>No procede</td></tr></tbody></table>

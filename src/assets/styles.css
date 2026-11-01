@@ -550,3 +550,8 @@ input[type=checkbox],input[type=radio]{width:1.2rem;height:1.2rem;accent-color:v
 .credits li{display:grid;grid-template-columns:8rem 1fr;gap:1.2rem;align-items:start;background:var(--white);padding:1rem;border-radius:16px}
 .credits img{width:8rem;height:5.5rem;object-fit:cover;border-radius:8px}
 .credits p{margin:0 0 .3rem}
+/* Legal tables (cookie policy) */
+.prose .table-scroll{overflow-x:auto;margin:0 0 1.5em}
+.prose .legal-table{width:100%;min-width:30rem;border-collapse:collapse;font-size:.95em;line-height:1.5}
+.prose .legal-table th,.prose .legal-table td{text-align:left;vertical-align:top;padding:.6em 1em .6em 0;border-bottom:1px solid color-mix(in srgb,currentColor 20%,transparent)}
+.prose .legal-table th{font-weight:600}

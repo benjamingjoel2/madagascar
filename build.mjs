@@ -1075,7 +1075,7 @@ function legalPage(doc) {
 <section class="sec"><div class="wrap article">
   <p class="mono">${t("Last updated: {date}", { date: `<time datetime="${doc.updated}">${fmtDate(doc.updated)}</time>` })}</p>
   <div class="prose prose--article">
-    ${doc.sections.map(([h, ps]) => `<h2>${esc(t(h))}</h2>${ps.map((p) => `<p>${f(p)}</p>`).join("")}`).join("\n    ")}
+    ${doc.sections.map(([h, ps]) => `<h2>${esc(t(h))}</h2>${ps.map((p) => (p.startsWith("<table") ? `<div class="table-scroll" role="region" aria-label="${esc(t(h))}" tabindex="0">${f(p)}</div>` : `<p>${f(p)}</p>`)).join("")}`).join("\n    ")}
   </div>
 </div></section>`,
   });
