@@ -718,7 +718,6 @@ ea77ffe8	2. Angebote
 2e043631	5. Änderungen durch Sie
 937f200a	Wenn Sie Ihre Reise nach der Bestätigung ändern möchten, teilen Sie uns das bitte so früh wie möglich schriftlich mit. Wir helfen gern, aber Änderungen hängen von der Verfügbarkeit ab und können Mehrkosten verursachen. Gebühren der Leistungsträger und etwaige Preisunterschiede werden an Sie weitergegeben.
 64a41604	6. Stornierung durch Sie
-0e53bbc1	Sie können jederzeit schriftlich stornieren. Die Stornokosten hängen davon ab, wie kurz vor der Abreise Sie stornieren, und von den Bedingungen der Lodges, Fluggesellschaften und anderen Leistungsträger, die wir für Sie gebucht haben. Die für Ihre Reise geltenden Kosten stehen vor der Zahlung in Ihrem Angebot und Ihrer Bestätigung. Wir empfehlen eine Reiseversicherung, die ab dem Buchungstag Stornierungen abdeckt.
 94a5e886	7. Änderungen und Stornierung durch uns
 f97aba5a	Madagaskar ist ein Land der langsamen Straßen, des wechselhaften Wetters und der Inlandsflüge, die manchmal verschoben werden. Es kann nötig sein, einen Reiseverlauf anzupassen, etwa eine Route, eine Lodge oder einen Flug zu ändern. Ist eine Änderung erheblich, informieren wir Sie so schnell wie möglich und bieten Ihnen eine gleichwertige Alternative oder, bei einer wesentlichen Änderung, die Erstattung des betroffenen Reiseteils an.
 2cd0b2a5	Nach der Bestätigung stornieren wir Ihre Reise nur, wenn es nicht anders geht, etwa wegen unvermeidbarer, außergewöhnlicher Umstände wie Zyklonen, Überschwemmungen, Unruhen oder offizieller Reisewarnungen. Wenn wir stornieren, bieten wir Ihnen eine andere Reise oder die volle Erstattung der an uns gezahlten Beträge an.
@@ -733,8 +732,6 @@ ac6f0956	11. Ihre Pflichten
 2f86c4d0	Bitte folgen Sie den Anweisungen der Parkguides und Fahrer, respektieren Sie örtliche Gesetze und Bräuche und halten Sie sich an die Parkregeln zum Umgang mit Wildtieren (kein Füttern, kein Berühren, keine Klangattrappen). Wir können die Reise einer Person beenden, deren Verhalten andere gefährdet.
 724885ed	12. Beschwerden
 e31178da	Wenn während Ihrer Reise etwas schiefgeht, sagen Sie es Ihrem Fahrer oder melden Sie sich sofort bei uns, damit wir versuchen können, es vor Ort zu beheben. Sind Sie danach noch unzufrieden, schreiben Sie uns innerhalb von 28 Tagen nach Ihrer Rückkehr an <a href="mailto:{email}">{email}</a>; wir antworten schriftlich.
-14bfad3b	13. Anwendbares Recht
-96a9bacf	Diese Bedingungen unterliegen dem Recht, das auf den Vertrag zwischen Ihnen und {brand} anwendbar ist. Streitigkeiten werden von den nach diesem Recht zuständigen Gerichten entschieden. Als Verbraucher behalten Sie den Schutz, den Ihnen das Recht Ihres Wohnsitzlandes gewährt.
 72b34e9a	{brand}, {address}. E-Mail: <a href="mailto:{email}">{email}</a>.
 df26c53d	Welche Cookies und ähnlichen Technologien die Website von {brand} verwendet.
 12e8ac78	Diese Website verwendet keine Cookies. Diese Seite erklärt, was das bedeutet und was bei Ihrem Besuch gespeichert oder geladen wird.
@@ -770,3 +767,27 @@ d48f4d6b	Tierwelt hier, <em>Monat für Monat</em>.
 0ea923de	Vollständiger Tierführer
 fce9ab55	Alle Journalbeiträge
 f92bcb6a	Madagaskar
+# Legal pages, 1 November 2026
+524cf50b	Cookies
+e36798d3	Wo das Datenschutzrecht es verlangt, stützen wir diese Übermittlungen auf anerkannte Garantien, etwa die Standardvertragsklauseln der Europäischen Kommission (mit dem britischen Zusatz), Angemessenheitsbeschlüsse oder darauf, dass die Übermittlung zur Erfüllung des von Ihnen gewünschten Vertrags erforderlich ist. Einzelheiten nennen wir Ihnen gern.
+a75f6754	Server-Logs: werden von unserem Hosting-Anbieter aus Sicherheitsgründen kurz gespeichert (höchstens 30 Tage) und dann gelöscht.
+dcf75191	Kinder
+eec720d7	Diese Website und unsere Leistungen richten sich an Erwachsene. Wir erheben wissentlich keine personenbezogenen Daten direkt von Kindern unter 16 Jahren. Angaben zu Kindern, die mit ihrer Familie reisen, erhalten wir von einem Elternteil oder Vormund und nutzen sie nur, um die Reise zu planen und durchzuführen.
+615043a5	Änderungen dieser Richtlinie
+b37456c4	Kontakt
+c79ff079	Sofern Ihr Angebot nichts anderes vorsieht, beträgt die Anzahlung 30 % des Gesamtpreises und der Restbetrag ist 60 Tage vor Abreise fällig; buchen Sie weniger als 60 Tage vor Abreise, ist der volle Preis bei Buchung fällig.
+fec9b0a7	Sie können jederzeit schriftlich stornieren; die Stornierung wird an dem Tag wirksam, an dem sie bei uns eingeht. Da wir für Sie Zahlungen an Leistungsträger eingehen, gelten – sofern Ihr Angebot nichts anderes vorsieht – folgende Gebühren in Prozent des Gesamtpreises: mehr als 60 Tage vor Abreise Verlust der Anzahlung (30 %); 60 bis 31 Tage 50 %; 30 bis 15 Tage 75 %; 14 Tage oder weniger oder bei Nichtantritt 100 %.
+00e0487c	Sind die Bedingungen eines Leistungsträgers strenger, etwa bei nicht erstattbaren Flügen, Genehmigungen oder Aufenthalten in der Hochsaison, steht das in Ihrem Angebot, und diese Gebühren gelten stattdessen. Ihre Reiseversicherung kann Stornokosten abdecken.
+bdef5f7b	Wir haften nicht für Änderungen, Verspätungen oder Absagen infolge außergewöhnlicher und unvorhersehbarer Umstände außerhalb unserer Kontrolle, deren Folgen sich auch bei aller gebotenen Sorgfalt nicht hätten vermeiden lassen, etwa Krieg oder Kriegsgefahr, Unruhen, Terrorismus, Naturkatastrophen, extreme Wetterlagen, Epidemien, Brände, die Schließung von Flug- oder Seehäfen, Streiks sowie behördliche Maßnahmen oder offizielle Reisewarnungen. Verhindert höhere Gewalt Ihre Reise, erstatten wir Ihnen alles, was wir von den Leistungsträgern zurückerhalten, und helfen Ihnen bei der Umplanung.
+356e79bd	Für diese Bedingungen und alle daraus entstehenden Streitigkeiten gilt das Recht Madagaskars; zuständig sind die Gerichte Madagaskars. Wohnen Sie anderswo, bleiben Ihnen die zwingenden Rechte aus dem Verbraucherrecht Ihres Wohnsitzlandes erhalten, und Sie können auch dort klagen. Wir bemühen uns stets zuerst um eine einvernehmliche Lösung.
+709a2322	Name
+3deb7456	Art
+615043a5	Änderungen dieser Richtlinie
+6410c79d	Speichert die Website künftig etwas Neues, aktualisieren wir vorher diese Seite und das Datum oben.
+35c45b44	Diese Website wird von Vercel Inc. gehostet, das die zur Auslieferung jeder Seite nötigen technischen Daten, etwa Ihre IP-Adresse und Browserangaben, in kurzlebigen Server-Logs verarbeitet. Das Anfrageformular öffnet eine vorausgefüllte E-Mail in Ihrem eigenen E-Mail-Programm; Ihre Angaben erreichen uns als gewöhnliche E-Mail, sobald Sie sie absenden.
+09504f27	Diese Website setzt keine Cookies. Mehr dazu in unserer <a href="/cookies/">Cookie-Richtlinie</a>.
+9046db42	13. Höhere Gewalt
+700f5a1c	14. Datenschutz
+f990cea6	15. Anwendbares Recht
+de821768	Wir verwenden Ihre personenbezogenen Daten nur wie in unserer <a href="/privacy/">Datenschutzerklärung</a> beschrieben.
+e7e53d2a	<table class="legal-table"><thead><tr><th scope="col">Name</th><th scope="col">Zweck</th><th scope="col">Dauer</th><th scope="col">Art</th></tr></thead><tbody><tr><td>Keine</td><td>Diese Website setzt keine Cookies und nutzt keinen Browserspeicher</td><td>Entfällt</td><td>Entfällt</td></tr></tbody></table>

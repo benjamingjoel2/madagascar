@@ -8,7 +8,7 @@ export default [
     title: "Privacy policy",
     description: "How {brand} collects, uses and protects the personal information you share with us.",
     lead: "This policy explains what personal information {brand} collects when you use this website or plan a journey with us, why we need it, and the choices you have.",
-    updated: "2026-10-30",
+    updated: "2026-11-01",
     sections: [
       ["Who we are", [
         "{brand} plans tailor-made journeys in Madagascar. We are responsible for the personal information described in this policy. You can reach us at <a href=\"mailto:{email}\">{email}</a> or by post at {address}.",
@@ -28,10 +28,13 @@ export default [
       ["Who we share it with", [
         "We share only what each supplier needs to deliver your journey: for example lodges, drivers, boat operators, domestic airlines and national park authorities in Madagascar. Some of them are outside your country, and Madagascar may not offer the same level of data protection as your home country. Where that is the case we share only the minimum needed to provide the service you have asked for.",
         "We also use service providers that host this website and our email. They process data on our instructions only.",
+        "This website is hosted by Vercel Inc., which processes the technical data needed to deliver each page, such as your IP address and browser details, in short-lived server logs. The enquiry form opens a pre-filled email in your own email program, so your details reach us as an ordinary email once you press send.",
+        "Where data protection law requires it, we rely on recognised safeguards for these transfers, such as the European Commission's standard contractual clauses (with the UK addendum), adequacy decisions, or the fact that the transfer is necessary to perform the contract you asked us to arrange. You can ask us for details.",
         "We may disclose information where the law requires it.",
       ]],
       ["How long we keep it", [
         "Enquiries that do not lead to a booking are deleted within two years of our last contact. Booking records are kept for as long as accounting and tax law requires, and then deleted.",
+        "Server logs: kept by our hosting provider for a short period (no more than 30 days) for security, then deleted.",
       ]],
       ["Your rights", [
         "Depending on where you live, you may have the right to access the information we hold about you, to correct it, to have it deleted, to restrict or object to how we use it, and to receive a copy in a portable format. Where we rely on your consent, you can withdraw it at any time.",
@@ -40,8 +43,17 @@ export default [
       ["Security", [
         "This website is served over an encrypted connection. We limit access to your information to the people who need it to plan your trip, and we ask our suppliers to protect it.",
       ]],
+      ["Cookies", [
+        "This website sets no cookies. More detail is in our <a href=\"/cookies/\">cookie policy</a>.",
+      ]],
+      ["Children", [
+        "This website and our services are meant for adults. We do not knowingly collect personal data directly from children under 16. Details of children travelling in a family group are given to us by a parent or guardian and are used only to plan and run the trip.",
+      ]],
       ["Changes to this policy", [
         "We may update this policy from time to time. The date at the top of this page shows when it last changed.",
+      ]],
+      ["Contact", [
+        "{brand}, {address}. Email: <a href=\"mailto:{email}\">{email}</a>.",
       ]],
     ],
   },
@@ -50,7 +62,7 @@ export default [
     title: "Booking terms",
     description: "The terms that apply when you enquire about and book a tailor-made journey with {brand}.",
     lead: "These terms apply to every tailor-made journey arranged by {brand}. Please read them before you confirm a booking: by paying a deposit you accept them on behalf of everyone travelling with you.",
-    updated: "2026-10-30",
+    updated: "2026-11-01",
     sections: [
       ["1. Enquiries and proposals", [
         "Every journey we offer is made to measure. When you send an enquiry we reply with advice and, if you wish, a written proposal with an itinerary and a quote for your dates. Proposals and quotes are free and do not commit you to anything.",
@@ -66,12 +78,14 @@ export default [
       ]],
       ["4. Paying the balance", [
         "The balance is due by the date shown on your confirmation. If it is not paid on time, we may treat the booking as cancelled by you, and the cancellation terms below apply.",
+        "Unless your quote states otherwise, the deposit is 30% of the total price and the balance is due 60 days before departure; if you book within 60 days of departure, the full price is due when you book.",
       ]],
       ["5. Changes by you", [
         "If you want to change your journey after it is confirmed, tell us in writing as soon as possible. We will do our best to help, but changes depend on availability and may cost more. Any charges made by suppliers, and any difference in price, are passed on to you.",
       ]],
       ["6. Cancellation by you", [
-        "You can cancel at any time by writing to us. Cancellation charges depend on how close to departure you cancel and on the conditions of the lodges, airlines and other suppliers we have booked for you. The charges that apply to your journey are set out in your quote and confirmation before you pay. We recommend travel insurance that covers cancellation from the day you book.",
+        "You may cancel at any time by writing to us; the cancellation takes effect on the day we receive it. Because we commit money to suppliers on your behalf, unless your quote states otherwise the following charges apply, as a percentage of the total price: more than 60 days before departure, loss of the deposit (30%); 60 to 31 days, 50%; 30 to 15 days, 75%; 14 days or fewer, or if you do not travel, 100%.",
+        "Where a supplier's own terms are stricter, for example non-refundable flights, permits or peak-season stays, your quote will say so and those charges apply instead. Your travel insurance may cover cancellation charges.",
       ]],
       ["7. Changes and cancellation by us", [
         "Madagascar is a country of slow roads, changing weather and domestic flights that are sometimes rescheduled. We may need to adjust an itinerary, for example to change a route, a lodge or a flight. If a change is significant, we will tell you as soon as possible and offer you a comparable alternative or, where the change is major, a refund of the affected part of the journey.",
@@ -93,8 +107,14 @@ export default [
       ["12. Complaints", [
         "If something goes wrong during your journey, tell your driver or contact us straight away so we can try to put it right on the spot. If you are still not satisfied, write to us at <a href=\"mailto:{email}\">{email}</a> within 28 days of your return and we will reply in writing.",
       ]],
-      ["13. Law", [
-        "These terms are governed by the law that applies to the contract between you and {brand}. Any dispute will be handled by the courts that have jurisdiction under that law. If you are a consumer, you keep the protection given to you by the law of the country where you live.",
+      ["13. Force majeure", [
+        "We are not liable for changes, delays or cancellations caused by unusual and unforeseeable circumstances beyond our control whose consequences could not have been avoided even with all due care, such as war or the threat of war, civil unrest, terrorism, natural disasters, extreme weather, epidemics, fire, the closure of airports or ports, industrial action, and government action or official advice against travel. If force majeure prevents your trip, we will refund everything we are able to recover from suppliers and help you rearrange.",
+      ]],
+      ["14. Data protection", [
+        "We use your personal information only as described in our <a href=\"/privacy/\">privacy policy</a>.",
+      ]],
+      ["15. Governing law", [
+        "These terms, and any dispute arising from them, are governed by the laws of Madagascar, and the courts of Madagascar have jurisdiction. If you live elsewhere, this does not take away any mandatory rights you have under the consumer law of your country of residence, and you may also bring proceedings there. We will always try to resolve a complaint by agreement first.",
       ]],
       ["Contact", [
         "{brand}, {address}. Email: <a href=\"mailto:{email}\">{email}</a>.",
@@ -106,11 +126,12 @@ export default [
     title: "Cookie policy",
     description: "Which cookies and similar technologies the {brand} website uses.",
     lead: "This website does not use cookies. This page explains what that means, and what is stored or loaded when you visit.",
-    updated: "2026-10-30",
+    updated: "2026-11-01",
     sections: [
       ["Cookies on this site", [
         "Cookies are small text files that a website stores in your browser. {brand} does not set any cookies: no analytics, no advertising, no social media trackers.",
         "We also do not use local storage, session storage or any other technology to store information on your device.",
+        "<table class=\"legal-table\"><thead><tr><th scope=\"col\">Name</th><th scope=\"col\">Purpose</th><th scope=\"col\">Duration</th><th scope=\"col\">Type</th></tr></thead><tbody><tr><td>None</td><td>This site sets no cookies and uses no browser storage</td><td>Not applicable</td><td>Not applicable</td></tr></tbody></table>",
       ]],
       ["Content from other services", [
         "Photographs on this site are loaded from our image delivery provider. To deliver an image, that service receives your IP address and browser details, as any web server does. It does not set cookies through this website.",
@@ -120,6 +141,9 @@ export default [
       ["Consent and how to withdraw it", [
         "Because we do not set cookies that need consent, we do not show a cookie banner. If we ever add cookies that need your consent, such as analytics, we will ask for it first, update this page and give you a way to withdraw your consent at any time.",
         "You can always block or delete cookies in your browser settings. Doing so will not affect how this website works.",
+      ]],
+      ["Changes to this policy", [
+        "If the website starts storing anything new, we will update this page, and the date at the top, before it does.",
       ]],
       ["Questions", [
         "If you have any questions about this policy, email <a href=\"mailto:{email}\">{email}</a>.",

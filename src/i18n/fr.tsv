@@ -718,7 +718,6 @@ ea77ffe8	2. Devis
 2e043631	5. Modifications de votre part
 937f200a	Si vous souhaitez modifier votre voyage après sa confirmation, prévenez-nous par écrit le plus tôt possible. Nous ferons de notre mieux pour vous aider, mais les modifications dépendent des disponibilités et peuvent coûter plus cher. Les frais facturés par les prestataires et toute différence de prix vous sont répercutés.
 64a41604	6. Annulation de votre part
-0e53bbc1	Vous pouvez annuler à tout moment en nous écrivant. Les frais d'annulation dépendent de la date d'annulation par rapport au départ et des conditions des lodges, compagnies aériennes et autres prestataires réservés pour vous. Les frais applicables à votre voyage figurent dans votre devis et votre confirmation avant tout paiement. Nous vous recommandons une assurance voyage couvrant l'annulation dès le jour de la réservation.
 94a5e886	7. Modifications et annulation de notre part
 f97aba5a	Madagascar est un pays de routes lentes, de météo changeante et de vols intérieurs parfois décalés. Nous pouvons être amenés à adapter un itinéraire, par exemple en changeant un trajet, un lodge ou un vol. Si une modification est importante, nous vous en informerons au plus vite et vous proposerons une alternative comparable ou, si la modification est majeure, le remboursement de la partie du voyage concernée.
 2cd0b2a5	Nous n'annulerons pas votre voyage après confirmation sauf en cas de nécessité, par exemple en raison de circonstances exceptionnelles et inévitables comme des cyclones, des inondations, des troubles civils ou des recommandations officielles aux voyageurs. Si nous annulons, nous vous proposerons un autre voyage ou le remboursement intégral des sommes versées.
@@ -733,8 +732,6 @@ ac6f0956	11. Vos responsabilités
 2f86c4d0	Merci de suivre les consignes des guides des parcs et des chauffeurs, de respecter les lois et coutumes locales et les règles des parcs relatives à la faune (pas de nourrissage, pas de contact, pas de repasse). Nous pouvons mettre fin au voyage de toute personne dont le comportement met les autres en danger.
 724885ed	12. Réclamations
 e31178da	Si un problème survient pendant votre voyage, signalez-le à votre chauffeur ou contactez-nous immédiatement afin que nous puissions tenter d'y remédier sur place. Si vous n'êtes toujours pas satisfait, écrivez-nous à <a href="mailto:{email}">{email}</a> dans les 28 jours suivant votre retour et nous vous répondrons par écrit.
-14bfad3b	13. Droit applicable
-96a9bacf	Ces conditions sont régies par le droit applicable au contrat conclu entre vous et {brand}. Tout litige sera porté devant les juridictions compétentes en vertu de ce droit. Si vous êtes un consommateur, vous conservez la protection que vous accorde la loi de votre pays de résidence.
 72b34e9a	{brand}, {address}. E-mail : <a href="mailto:{email}">{email}</a>.
 df26c53d	Les cookies et technologies similaires utilisés par le site de {brand}.
 12e8ac78	Ce site n'utilise pas de cookies. Cette page explique ce que cela signifie, et ce qui est stocké ou chargé lors de votre visite.
@@ -770,3 +767,27 @@ d48f4d6b	La faune ici, <em>mois par mois</em>.
 0ea923de	Le guide complet de la faune
 fce9ab55	Tous les articles du journal
 f92bcb6a	Madagascar
+# Legal pages, 1 November 2026
+524cf50b	Cookies
+e36798d3	Lorsque la législation sur la protection des données l’exige, nous encadrons ces transferts par des garanties reconnues, comme les clauses contractuelles types de la Commission européenne (avec l’avenant britannique), des décisions d’adéquation, ou le fait que le transfert est nécessaire à l’exécution du contrat que vous nous avez demandé d’organiser. Vous pouvez nous en demander le détail.
+a75f6754	Journaux du serveur : conservés par notre hébergeur pendant une courte période (30 jours au plus) pour des raisons de sécurité, puis supprimés.
+dcf75191	Enfants
+eec720d7	Ce site et nos services s’adressent aux adultes. Nous ne collectons pas sciemment de données personnelles directement auprès d’enfants de moins de 16 ans. Les informations sur les enfants qui voyagent en famille nous sont transmises par un parent ou un tuteur et servent uniquement à préparer et à organiser le voyage.
+615043a5	Modifications de cette politique
+b37456c4	Contact
+c79ff079	Sauf mention contraire sur votre devis, l’acompte s’élève à 30 % du prix total et le solde est dû 60 jours avant le départ ; si vous réservez moins de 60 jours avant le départ, la totalité du prix est due à la réservation.
+fec9b0a7	Vous pouvez annuler à tout moment en nous écrivant ; l’annulation prend effet le jour où nous la recevons. Comme nous engageons des fonds auprès des prestataires pour votre compte, et sauf mention contraire sur votre devis, les frais suivants s’appliquent, en pourcentage du prix total : plus de 60 jours avant le départ, perte de l’acompte (30 %) ; de 60 à 31 jours, 50 % ; de 30 à 15 jours, 75 % ; 14 jours ou moins, ou en cas de non-présentation, 100 %.
+00e0487c	Lorsque les conditions d’un prestataire sont plus strictes, par exemple pour des vols, permis ou séjours en haute saison non remboursables, votre devis le précise et ces frais s’appliquent à la place. Votre assurance voyage peut couvrir les frais d’annulation.
+bdef5f7b	Nous ne sommes pas responsables des modifications, retards ou annulations causés par des circonstances exceptionnelles et imprévisibles, indépendantes de notre volonté, dont les conséquences n’auraient pu être évitées même avec toute la diligence requise : guerre ou menace de guerre, troubles civils, terrorisme, catastrophes naturelles, conditions météorologiques extrêmes, épidémies, incendies, fermeture d’aéroports ou de ports, grèves, décisions des autorités ou avis officiels déconseillant de voyager. Si un cas de force majeure empêche votre voyage, nous vous rembourserons tout ce que nous pourrons récupérer auprès des prestataires et vous aiderons à le reprogrammer.
+356e79bd	Les présentes conditions, et tout litige qui en découle, sont régies par le droit de Madagascar, et les tribunaux de Madagascar sont compétents. Si vous résidez ailleurs, cela ne vous prive d’aucun droit impératif que vous confère le droit de la consommation de votre pays de résidence, et vous pouvez également y engager une procédure. Nous chercherons toujours d’abord à régler une réclamation à l’amiable.
+709a2322	Nom
+3deb7456	Type
+615043a5	Modifications de cette politique
+6410c79d	Si le site commence à enregistrer quoi que ce soit de nouveau, nous mettrons cette page à jour, ainsi que la date en haut, au préalable.
+35c45b44	Ce site est hébergé par Vercel Inc., qui traite les données techniques nécessaires à l’affichage de chaque page, comme votre adresse IP et les informations sur votre navigateur, dans des journaux serveur de courte durée. Le formulaire de demande ouvre un e-mail prérempli dans votre propre messagerie : vos informations nous parviennent sous forme d’e-mail ordinaire une fois que vous l’envoyez.
+09504f27	Ce site ne dépose aucun cookie. Plus de détails dans notre <a href="/cookies/">politique relative aux cookies</a>.
+9046db42	13. Force majeure
+700f5a1c	14. Protection des données
+f990cea6	15. Droit applicable
+de821768	Nous utilisons vos données personnelles uniquement comme décrit dans notre <a href="/privacy/">politique de confidentialité</a>.
+e7e53d2a	<table class="legal-table"><thead><tr><th scope="col">Nom</th><th scope="col">Finalité</th><th scope="col">Durée</th><th scope="col">Type</th></tr></thead><tbody><tr><td>Aucun</td><td>Ce site ne dépose aucun cookie et n’utilise pas le stockage du navigateur</td><td>Sans objet</td><td>Sans objet</td></tr></tbody></table>
