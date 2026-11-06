@@ -82,7 +82,7 @@ const dms = (v, pos, neg) => {
 const coords = (r) => `${dms(r.lat, "N", "S")} ${dms(r.lon, "E", "W")}`;
 const pad = (n) => String(n).padStart(2, "0");
 const label = (n, text) => `<p class="label"><span class="label__n">(${pad(n)})</span> ${text}</p>`;
-const ARROW = `<span class="arrow" aria-hidden="true">↗</span>`;
+const ARROW = ""; // buttons are plain text pills (no separate circle arrow)
 const fill = (s) => s.replace(/\{brand\}/g, esc(brand.name)).replace(/\{email\}/g, contact.email).replace(/\{address\}/g, esc(ADDRESS)).replace(/\{site\}/g, config.siteUrl);
 
 function write(path, html) {
@@ -106,24 +106,9 @@ function img(p, { sizes = "100vw", eager = false, cls = "" } = {}) {
   return `<img class="${cls}" src="${unsplashUrl(p, 1200)}" srcset="${srcsetOf(p)}" sizes="${sizes}" width="1200" height="${Math.round(1200 * ratio)}" alt="${esc(p.alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" style="background:${p.color || palette.nightSoft}">`;
 }
 
-// Contour-line artwork: used where we don't yet have a photo taken in the place.
-// Deterministic per slug, so each region gets its own "terrain".
+// Plain tinted panel where we don't yet have a photo taken in the place.
 function contour(seed, { cls = "" } = {}) {
-  let h = 0;
-  for (const c of seed) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-  const rnd = () => ((h = (h * 1664525 + 1013904223) >>> 0) / 2 ** 32);
-  const cx = 300 + rnd() * 400, cy = 160 + rnd() * 200, a1 = rnd() * 6, a2 = rnd() * 6;
-  const rings = [];
-  for (let k = 1; k <= 22; k++) {
-    const pts = [];
-    for (let t = 0; t <= 64; t++) {
-      const th = (t / 64) * Math.PI * 2;
-      const r = k * 26 * (1 + 0.18 * Math.sin(3 * th + a1 + k * 0.15) + 0.1 * Math.sin(5 * th + a2));
-      pts.push(`${(cx + r * 1.5 * Math.cos(th)).toFixed(1)},${(cy + r * Math.sin(th)).toFixed(1)}`);
-    }
-    rings.push(`<polyline points="${pts.join(" ")}"/>`);
-  }
-  return `<svg class="contour ${cls}" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g>${rings.join("")}</g></svg>`;
+  return `<span class="contour ${cls}" aria-hidden="true"></span>`;
 }
 
 function figure(key, opts = {}) {
@@ -137,7 +122,7 @@ function figure(key, opts = {}) {
 // ── layout ───────────────────────────────────────────────────
 const NAV = [
   ["/regions/", "Regions"],
-  ["/map/", "Driving map"],
+  ["/map/", "Driving times"],
   ["/wildlife/", "Wildlife"],
   ["/journeys/", "Journeys"],
   ["/when-to-go/", "When to go"],
@@ -232,12 +217,18 @@ ${preload ? `<link rel="preload" as="image" href="${preload.href}" imagesrcset="
 ${body}
 </main>
 <footer class="ftr">
+  <div class="ftr__band">
+    ${photos["morondava-baobabs"] ? img(photos["morondava-baobabs"], { cls: "ftr__band-img", sizes: "100vw" }) : ""}
+    <div class="wrap ftr__band-in">
+      <p class="ftr__band-t">${t("Plan a journey")}</p>
+      <a class="pill pill--gold" href="/enquire/">${t("Start an enquiry")}</a>
+    </div>
+  </div>
   <div class="wrap">
     <div class="ftr__grid">
       <div class="ftr__intro">
-        ${label(0, t("Madagascar, honestly"))}
+        <p class="ftr__brand">${LOGO}<span>${esc(brand.name)}</span></p>
         <p class="ftr__lead">${esc(t(brand.description))}</p>
-        <a class="pill pill--light" href="/enquire/">${t("Start an enquiry")} ${ARROW}</a>
       </div>
       <div>
         <h2 class="ftr__h">${t("Contact")}</h2>
@@ -253,13 +244,12 @@ ${body}
       </div>
       <div>
         <h2 class="ftr__h">${t("Small print")}</h2>
-        <ul class="plain">${LEGAL_LINKS.map(([h, l]) => `<li><a href="${h}">${t(l)}</a></li>`).join("")}<li><a href="/sources/">${t("Sources")}</a></li><li><a href="/enquire/">${t("Enquire")}</a></li></ul>
+        <ul class="plain">${LEGAL_LINKS.map(([h, l]) => `<li><a href="${h}">${t(l)}</a></li>`).join("")}<li><a href="/sources/">${t("Sources")}</a></li></ul>
       </div>
     </div>
-    <p class="ftr__mark" aria-hidden="true">${esc(brand.name)}</p>
     <div class="ftr__small">
-      <p>${t("Driving times, park access and seasons are guidance, not guarantees. We check them before every booking.")}</p>
       <p>© ${new Date().getFullYear()} ${esc(brand.name)}</p>
+      <p>${t("Driving times, park access and seasons are guidance, not guarantees. We check them before every booking.")}</p>
     </div>
   </div>
 </footer>
@@ -289,92 +279,8 @@ const pageHead = ({ n, kicker, title, lead, art }) => `
 const ACCESS_LABEL = { open: "Open all year", seasonal: "Seasonal access", "closed-wet": "Closed in the wet season" };
 const accessTag = (a) => `<span class="tag tag--${a}">${t(ACCESS_LABEL[a])}</span>`;
 
-const cta = ({ title = t("Tell us your dates. <em>We'll tell you what's realistic.</em>"), text = t("No obligation. A real person reads every enquiry and replies with honest advice.") } = {}) => `
-<section class="cta">
-  ${photos["morondava-baobabs"] ? img(photos["morondava-baobabs"], { cls: "cta__img" }) : contour("cta", { cls: "cta__img" })}
-  <div class="wrap cta__in reveal">
-    <h2 class="cta__t">${title}</h2>
-    <p>${text}</p>
-    <a class="pill pill--gold pill--lg" href="/enquire/">${t("Make an enquiry")} ${ARROW}</a>
-  </div>
-</section>`;
-
-// ── map (SVG) ────────────────────────────────────────────────
-const COAST = [
-  [49.26, -11.95], [49.6, -12.5], [49.95, -13.1], [50.05, -13.6], [50.17, -14.27], [50.28, -14.9],
-  [50.48, -15.27], [50.45, -15.6], [50.2, -15.98], [49.95, -15.65], [49.85, -15.45], [49.74, -15.43],
-  [49.68, -15.6], [49.78, -16.1], [49.58, -16.92], [49.4, -17.38], [49.4, -18.15], [48.98, -19.33],
-  [48.8, -19.9], [48.53, -20.58], [48.35, -21.23], [48.02, -22.15], [47.83, -22.82], [47.6, -23.35],
-  [47.32, -24.28], [46.98, -25.03], [46.2, -25.2], [45.15, -25.6], [44.4, -25.25], [43.95, -24.68],
-  [43.65, -23.67], [43.67, -23.35], [43.62, -23.15], [43.5, -22.4], [43.37, -21.75], [43.6, -21.3],
-  [43.98, -20.73], [44.28, -20.28], [44.25, -19.7], [44.4, -19.3], [44.03, -18.06], [44.2, -17.2],
-  [44.45, -16.2], [45.3, -15.95], [46.32, -15.72], [46.9, -15.25], [47.6, -14.9], [47.75, -14.63],
-  [48.0, -13.9], [48.45, -13.68], [48.6, -13.45], [48.9, -12.9], [48.95, -12.45], [49.1, -12.1],
-];
-const LON0 = 42.6, LAT0 = -11.3, K = 62, COSLAT = Math.cos((19 * Math.PI) / 180);
-const proj = (lon, lat) => [((lon - LON0) * COSLAT * K).toFixed(1), ((LAT0 - lat) * K).toFixed(1)];
-const MAP_W = Math.round((51.2 - LON0) * COSLAT * K), MAP_H = Math.round((LAT0 + 26) * K);
-
-function mapSvg({ mini = false } = {}) {
-  const coast = COAST.map(([lo, la]) => proj(lo, la).join(",")).join(" ");
-  const [nbx, nby] = proj(48.27, -13.33);
-  // graticule every 2 degrees
-  const grid = [];
-  for (let lat = -12; lat >= -26; lat -= 2) { const [, y] = proj(0, lat); grid.push(`<line x1="0" x2="${MAP_W}" y1="${y}" y2="${y}"/>`); }
-  for (let lon = 44; lon <= 50; lon += 2) { const [x] = proj(lon, 0); grid.push(`<line y1="0" y2="${MAP_H}" x1="${x}" x2="${x}"/>`); }
-  // flights first, so road labels sit on top of the dashed flight lines
-  const order = legs.map((l, i) => [l, i]).sort((a, b) => (b[0].mode === "flight") - (a[0].mode === "flight"));
-  const legSvg = order
-    .map(([l, i]) => {
-      const a = places[l.from], b = places[l.to];
-      const [x1, y1] = proj(a.lon, a.lat).map(Number), [x2, y2] = proj(b.lon, b.lat).map(Number);
-      if (l.mode === "flight") {
-        // curve flights so they don't sit on top of roads
-        const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy);
-        const bend = l.bend ?? Math.min(60, len * 0.22);
-        const cx = mx + (-dy / len) * bend, cy = my + (dx / len) * bend;
-        const lx = (mx + cx) / 2 + (l.labelOffset?.[0] || 0), ly = (my + cy) / 2 + (l.labelOffset?.[1] || 0);
-        return `<g class="leg leg--flight" data-leg="${i}">
-          <path d="M${x1},${y1} Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2},${y2}" />
-          ${mini ? "" : `<g class="leg__label leg__label--flight" transform="translate(${lx.toFixed(1)},${ly.toFixed(1)})"><rect x="-32" y="-12" width="64" height="24" rx="12"/><text text-anchor="middle" y="4.5">✈ ${fmtRange(l.hours)}</text></g>`}
-        </g>`;
-      }
-      const mx = (x1 + x2) / 2 + (l.labelOffset?.[0] || 0), my = (y1 + y2) / 2 + (l.labelOffset?.[1] || 0);
-      const w = 68;
-      return `<g class="leg leg--${l.mode}${l.season === "dry" ? " leg--dry" : ""}" data-leg="${i}">
-        <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" />
-        ${mini ? "" : `<g class="leg__label" transform="translate(${mx.toFixed(1)},${my.toFixed(1)})"><rect x="${-w / 2}" y="-12" width="${w}" height="24" rx="12"/><text text-anchor="middle" y="4.5">${fmtRange(l.hours)}</text></g>`}
-      </g>`;
-    })
-    .join("");
-  // label offsets tuned so names don't collide
-  const OFF = {
-    tana: [-12, -10, "end"], andasibe: [12, 5, "start"], antsirabe: [10, 5, "start"], ranomafana: [10, -6, "start"],
-    fianar: [-10, -6, "end"], ambalavao: [-10, 16, "end"], isalo: [10, 18, "start"], toliara: [8, 20, "start"],
-    ifaty: [-10, -6, "end"], miandrivazo: [-8, 18, "end"], morondava: [-10, 18, "end"], bekopaka: [-10, -8, "end"],
-    nosybe: [12, -8, "start"], maroantsetra: [-10, -6, "end"], masoala: [10, 18, "start"],
-  };
-  const placeSvg = Object.entries(places)
-    .map(([key, p]) => {
-      const [x, y] = proj(p.lon, p.lat);
-      const [dx, dy, anchor] = OFF[key] || [8, 4, "start"];
-      return `<g class="place${p.airport ? " place--airport" : ""}" data-place="${key}">
-        <circle cx="${x}" cy="${y}" r="${p.airport ? 6.5 : 5}"/>
-        ${mini ? "" : `<text x="${(+x + dx).toFixed(1)}" y="${(+y + dy).toFixed(1)}" text-anchor="${anchor}">${esc(p.name)}</text>`}
-      </g>`;
-    })
-    .join("");
-  return `<svg class="map-svg${mini ? " map-svg--mini" : ""}" viewBox="0 0 ${MAP_W} ${MAP_H}" ${mini ? 'aria-hidden="true" focusable="false"' : 'role="img" aria-labelledby="map-title map-desc"'}>
-    ${mini ? "" : `<title id="map-title">${t("Schematic driving-time map of Madagascar")}</title>
-    <desc id="map-desc">${t("Main overland routes and domestic flights with typical hours per leg. The same information is in the table below the map.")}</desc>`}
-    <g class="grat">${grid.join("")}</g>
-    <polygon class="land" points="${coast}"/>
-    <ellipse class="land" cx="${nbx}" cy="${nby}" rx="9" ry="7"/>
-    ${legSvg}
-    ${placeSvg}
-    ${mini ? "" : `<g class="compass" transform="translate(${MAP_W - 40},44)"><path d="M0,-18 L6,0 L0,-4 L-6,0Z"/><text y="18" text-anchor="middle">N</text></g>`}
-  </svg>`;
-}
+// The photo band and enquiry call to action now open the footer (see layout), so pages no longer add their own.
+const cta = () => "";
 
 function legsTable() {
   const MODE = { road: t("Paved road"), track: t("4x4 track"), boat: t("Boat"), flight: t("Flight") };
@@ -391,7 +297,7 @@ function legsTable() {
     .join("");
   return `<div class="table-scroll" tabindex="0" role="region" aria-label="${t("All legs, scrollable")}">
   <table class="dtable legs-table">
-    <caption class="sr-only">${t("Every leg on the map, both directions")}</caption>
+    <caption class="sr-only">${t("Every leg, both directions")}</caption>
     <thead><tr><th scope="col">${t("Leg")}</th><th scope="col">${t("Typical hours")}</th><th scope="col">${t("Distance")}</th><th scope="col">${t("Type")}</th><th scope="col">${t("Notes")}</th></tr></thead>
     <tbody>${rows}</tbody>
   </table></div>`;
@@ -512,20 +418,17 @@ function home() {
     preload: preloadFor(photos.hero),
     body: `
 <section class="hero">
-  ${photos.hero ? figure("hero", { eager: true, cls: "hero__fig" }) : contour("hero", { cls: "hero__fig" })}
-  <div class="hero__top wrap">
-    <p class="mono">${t("Madagascar")}</p>
-    <p class="mono">${esc(coords(tana))}</p>
-  </div>
-  <div class="hero__bottom wrap">
-    <div class="hero__row">
-      <p class="mono hero__tag">${t("Slow overland journeys<br>for nature lovers")}</p>
-      <div class="hero__intro">
-        <p>${esc(t(brand.description))}</p>
-        <p class="actions"><a class="pill pill--light" href="/journeys/">${t("Explore journeys")} ${ARROW}</a> <a class="pill pill--ghost" href="/map/">${t("Real driving times")} ${ARROW}</a></p>
-      </div>
+  <div class="wrap hero__in">
+    <div class="hero__text">
+      <p class="mono hero__kicker">${t("Madagascar")} · ${esc(coords(tana))}</p>
+      <h1 class="hero__t">${esc(t(brand.tagline))}</h1>
+      <p class="hero__lead">${esc(t(brand.description))}</p>
+      <p class="actions"><a class="pill pill--gold" href="/journeys/">${t("Explore journeys")}</a> <a class="textlink" href="/map/">${t("Real driving times")}</a></p>
     </div>
-    <h1 class="wordmark">${esc(brand.name)}<span class="sr-only">: ${esc(t(brand.tagline))}</span></h1>
+    <div class="hero__art">
+      <span class="hero__field" aria-hidden="true"></span>
+      ${figure("hero", { eager: true, cls: "hero__card", sizes: "(min-width: 56em) 34vw, 80vw" })}
+    </div>
   </div>
 </section>
 
@@ -552,12 +455,12 @@ function home() {
     </div>
     <div class="tools">
       <a class="tool reveal" href="/map/">
-        <div class="tool__media tool__media--map">${mapSvg({ mini: true })}</div>
+        <div class="tool__media">${figure("morondava-baobabs", { sizes: "(min-width: 56em) 45vw, 100vw" })}</div>
         <div class="tool__body">
           <p class="mono">${t("Signature tool 01")}</p>
-          <h3 class="tool__t">${t("The driving-time map")}</h3>
+          <h3 class="tool__t">${t("Real driving times")}</h3>
           <p>${t("Every main leg in hours, not kilometres. See where a domestic flight saves a day, and compare the road with flying between any two places.")}</p>
-          <span class="pill pill--light">${t("Open the map")} ${ARROW}</span>
+          <span class="pill pill--light">${t("See the driving times")} ${ARROW}</span>
         </div>
       </a>
       <a class="tool reveal" href="/wildlife/">
@@ -683,7 +586,7 @@ function regionPage(r) {
       <div><dt>${t("Best months")}</dt><dd>${esc(r.bestMonths)}</dd></div>
       <div><dt>${t("Access")}</dt><dd>${accessTag(r.access)}<span class="glance__note">${esc(r.accessNote)}</span></dd></div>
     </dl>
-    ${myLegs.length ? `<p class="mono glance__h">${t("Travel times")}</p><ul class="plain legs-mini">${myLegs.map((l) => `<li><span>${l.mode === "flight" ? "✈ " : ""}${esc(places[l.from].name)} → ${esc(places[l.to].name)}</span><strong>${fmtRange(l.hours)}</strong></li>`).join("")}</ul><a class="pill pill--dark" href="/map/">${t("Driving-time map")} ${ARROW}</a>` : ""}
+    ${myLegs.length ? `<p class="mono glance__h">${t("Travel times")}</p><ul class="plain legs-mini">${myLegs.map((l) => `<li><span>${l.mode === "flight" ? "✈ " : ""}${esc(places[l.from].name)} → ${esc(places[l.to].name)}</span><strong>${fmtRange(l.hours)}</strong></li>`).join("")}</ul><a class="pill pill--dark" href="/map/">${t("Driving times")} ${ARROW}</a>` : ""}
   </aside>
 </div></section>
 ${parks.length ? `<section class="sec sec--paper2"><div class="wrap"><div class="sec__head">${label(1, t("Wildlife"))}<h2 class="h-lg">${t("Wildlife here, <em>month by month</em>.")}</h2></div>${legend()}${parks.map((pk) => parkTable(pk)).join("")}<p><a class="pill pill--dark" href="/wildlife/">${t("Full wildlife guide")} ${ARROW}</a></p></div></section>` : ""}
@@ -702,7 +605,7 @@ function mapPage() {
     places: Object.fromEntries(Object.entries(places).map(([k, p]) => [k, { name: p.name }])),
     legs: legs.map((l) => ({ from: l.from, to: l.to, mode: l.mode, hours: l.hours, season: l.season })),
   };
-  // Strings used by assets/map.js
+  // Strings used by assets/planner.js
   const i18n = {
     same: t("Choose two different places."),
     road: t("By road"),
@@ -719,27 +622,16 @@ function mapPage() {
   const opts = Object.entries(places).map(([k, p]) => `<option value="${k}">${esc(p.name)}</option>`).join("");
   return layout({
     path: "/map/",
-    title: t("Driving-time map"),
+    title: t("Driving times"),
     description: t("Realistic driving hours for every main leg in Madagascar, and where a domestic flight saves a day."),
-    scripts: ["/assets/map.js"],
+    scripts: ["/assets/planner.js"],
     body: `${pageHead({
       n: 1,
       kicker: t("Signature tool"),
-      title: t("The driving-time map."),
-      lead: t("Roads in Madagascar are slow: a 250 km leg can take seven hours. This map shows realistic hours for each leg with a private driver, and marks the places where a domestic flight saves a day."),
+      title: t("Real driving times."),
+      lead: t("Roads in Madagascar are slow: a 250 km leg can take seven hours. This page gives realistic hours for each leg with a private driver, and shows where a domestic flight saves a day."),
     })}
-<section class="sec sec--dark sec--flush"><div class="wrap map-layout">
-  <div class="map-wrap">
-    ${mapSvg()}
-    <p class="mono map-note">${t("Schematic. Towns are placed by real coordinates; roads are drawn as straight lines.")}</p>
-  </div>
-  <div class="map-side">
-    <ul class="plain map-key" aria-label="${t("Key")}">
-      <li><svg width="40" height="10" aria-hidden="true"><line x1="0" y1="5" x2="40" y2="5" class="key-road"/></svg> ${t("Paved road")}</li>
-      <li><svg width="40" height="10" aria-hidden="true"><line x1="0" y1="5" x2="40" y2="5" class="key-track"/></svg> ${t("4x4 track, dry season only")}</li>
-      <li><svg width="40" height="10" aria-hidden="true"><line x1="0" y1="5" x2="40" y2="5" class="key-boat"/></svg> ${t("Boat")}</li>
-      <li><svg width="40" height="10" aria-hidden="true"><line x1="0" y1="5" x2="40" y2="5" class="key-flight"/></svg> ${t("Domestic flight that saves a day")}</li>
-    </ul>
+<section class="sec sec--dark sec--flush"><div class="wrap"><div class="planner-wrap">
     <form class="planner" id="planner" data-graph='${esc(JSON.stringify(graph))}' data-i18n='${esc(JSON.stringify(i18n))}'>
       <p class="mono">${t("Route planner")}</p>
       <h2 class="planner__t">${t("How long between two places?")}</h2>
@@ -751,8 +643,7 @@ function mapPage() {
       <div class="planner__out" id="planner-out" aria-live="polite"><p>${t("Choose two places to compare the road with flying.")}</p></div>
       <noscript><p>${t("The planner needs JavaScript. All legs are listed in the table below.")}</p></noscript>
     </form>
-  </div>
-</div></section>
+</div></div></section>
 <section class="sec"><div class="wrap">
   <div class="sec__head">${label(2, t("Flights"))}<h2 class="h-lg">${t("Where a flight <em>saves a day</em>.")}</h2></div>
   <div class="fgrid">${legs
@@ -1086,7 +977,7 @@ function notFound() {
     path: "/404.html",
     title: t("Page not found"),
     noAlternates: true,
-    body: `${pageHead({ n: 0, kicker: "404", title: t("This road <em>doesn't go anywhere</em>."), lead: t('The page you were looking for isn\'t here. Try the <a href="/regions/">regions</a>, the <a href="/map/">driving map</a> or the <a href="/">home page</a>.'), art: "404" })}`,
+    body: `${pageHead({ n: 0, kicker: "404", title: t("This road <em>doesn't go anywhere</em>."), lead: t('The page you were looking for isn\'t here. Try the <a href="/regions/">regions</a>, the <a href="/map/">driving times</a> or the <a href="/">home page</a>.'), art: "404" })}`,
   });
 }
 
@@ -1108,7 +999,7 @@ cpSync(join(ROOT, "src/assets"), join(OUT, "assets"), { recursive: true });
 rmSync(join(OUT, "assets/fonts/fonts.css"));
 const css = minifyCss(readFileSync(join(ROOT, "src/assets/fonts/fonts.css"), "utf8") + tokens() + readFileSync(join(ROOT, "src/assets/styles.css"), "utf8"));
 writeFileSync(join(OUT, "assets/styles.css"), css);
-for (const f of ["styles.css", "site.js", "map.js", "wildlife.js", "enquiry.js"]) VERSION[`/assets/${f}`] = hash(readFileSync(join(OUT, "assets", f)));
+for (const f of ["styles.css", "site.js", "planner.js", "wildlife.js", "enquiry.js"]) VERSION[`/assets/${f}`] = hash(readFileSync(join(OUT, "assets", f)));
 writeFileSync(
   join(OUT, "favicon.svg"),
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="${palette.night}"/><path d="M13 31h6l-1-14c3-1 6-3 8-6-3 1-5 1-7 0 2-2 3-4 3-7-2 2-4 3-6 3-2 0-4-1-6-3 0 3 1 5 3 7-2 1-4 1-7 0 2 3 5 5 8 6z" fill="${palette.gold}"/></svg>`

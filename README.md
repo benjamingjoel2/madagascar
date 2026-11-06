@@ -28,8 +28,8 @@ Any other static host works too: upload the contents of `dist/`.
 ```
 site.config.js        ← brand name, tagline, contact details, palette, fonts, form endpoint
 src/data/
-  regions.js          ← the ten regions (text, access, best months, map position)
-  routes.js           ← driving-time map: places, legs (hours, km, mode, season), flights
+  regions.js          ← the ten regions (text, access, best months, coordinates)
+  routes.js           ← driving times: places, legs (hours, km, mode, season), flights
   wildlife.js         ← wildlife guide: species × park × month, and park access by month
   journeys.js         ← sample journeys
   stays.js            ← stays (all names are placeholders)
@@ -42,7 +42,7 @@ src/i18n/             ← translations: fr.tsv, de.tsv, es.tsv (+ same.tsv for n
 src/assets/
   styles.css          ← all styles (colour and font tokens are injected from site.config.js)
   site.js             ← header state, mobile menu, scroll reveals
-  map.js              ← route planner on the driving-time map
+  planner.js          ← route planner on the driving-times page (/map/)
   wildlife.js         ← park, month and type filters on the wildlife guide
   enquiry.js          ← enquiry form validation and sending
 build.mjs             ← page templates and the build
@@ -91,9 +91,9 @@ By default the form opens the visitor's email app with the answers filled in. To
 
 ### Change a driving time
 
-Edit the leg in `src/data/routes.js`. `hours: [min, max]` is the realistic range. Add `flightSaves: "…"` to a flight leg to flag it as saving a day. `season: "dry"` marks legs that are only passable in the dry season (the planner leaves them out when the dry-season box is unticked). `labelOffset` and `bend` only adjust where labels and flight arcs sit on the map.
+Edit the leg in `src/data/routes.js`. `hours: [min, max]` is the realistic range. Add `flightSaves: "…"` to a flight leg to flag it as saving a day. `season: "dry"` marks legs that are only passable in the dry season (the planner leaves them out when the dry-season box is unticked).
 
-To add a new place, add it to `places` with its longitude and latitude. It is placed on the map automatically.
+To add a new place, add it to `places` with its longitude and latitude.
 
 ### Change wildlife or closures
 
@@ -134,4 +134,4 @@ Add an object to `src/data/journal.js` with `slug`, `title`, `date` (YYYY-MM-DD)
 
 - **Honesty.** There are no invented reviews, press logos, awards, prices or team biographies. Sightings are described as likely, possible or unlikely, never guaranteed. Stays are clearly marked as placeholders.
 - **Fast.** The site is static HTML with one small CSS file and a little vanilla JS, only on the pages that need it. Images are responsive and lazy-loaded from Unsplash's CDN.
-- **Accessible.** WCAG AA contrast (checked by `npm run check`), a skip link, visible focus, semantic tables with screen-reader labels for the colour-coded month cells, symbols as well as colour in those cells, and a form with linked error messages. Every page works without JavaScript; the map's legs are all in a table too.
+- **Accessible.** WCAG AA contrast (checked by `npm run check`), a skip link, visible focus, semantic tables with screen-reader labels for the colour-coded month cells, symbols as well as colour in those cells, and a form with linked error messages. Every page works without JavaScript; every leg is in a table. There are no map illustrations (owner rule).
