@@ -1,11 +1,10 @@
-// Route planner for the driving-time map: fastest road route vs. flying.
+// Route planner on the driving-times page: fastest road route vs. flying.
 (function () {
   var form = document.getElementById("planner");
   if (!form) return;
   var graph = JSON.parse(form.getAttribute("data-graph"));
   var T = JSON.parse(form.getAttribute("data-i18n"));
   var out = document.getElementById("planner-out");
-  var legEls = document.querySelectorAll(".map-svg .leg");
   var FLIGHT_OVERHEAD = 3; // check-in, transfers and waiting, in hours
   var DRIVE_DAY = 7; // hours we plan as a full road day
 
@@ -51,18 +50,9 @@
 
   function names(r) { return r.stops.map(function (k) { return graph.places[k].name; }).join(" → "); }
 
-  function highlight(idx) {
-    if (!touched) idx = [];
-    legEls.forEach(function (el) {
-      var i = +el.getAttribute("data-leg");
-      el.classList.toggle("is-hl", idx.indexOf(i) > -1);
-      el.classList.toggle("is-dim", idx.length > 0 && idx.indexOf(i) === -1);
-    });
-  }
-
   function update() {
     var from = form.from.value, to = form.to.value, dry = form.dry.checked;
-    if (from === to) { out.innerHTML = "<p>" + T.same + "</p>"; highlight([]); return; }
+    if (from === to) { out.innerHTML = "<p>" + T.same + "</p>"; return; }
     var road = route(from, to, false, dry);
     var any = route(from, to, true, dry);
     var html = "";
@@ -85,20 +75,10 @@
     }
     if (!road && !any) html = "<p>" + T.none + "</p>";
     out.innerHTML = html;
-    highlight((road && !(any && any.flights)) ? road.legIdx : (any ? any.legIdx.concat(road ? road.legIdx : []) : []));
   }
 
-  var touched = false; // show the whole map until someone picks a route
-  form.addEventListener("change", function () { touched = true; update(); });
-  form.addEventListener("submit", function (e) { e.preventDefault(); touched = true; update(); });
+  form.addEventListener("change", update);
+  form.addEventListener("submit", function (e) { e.preventDefault(); update(); });
   update();
 
-  // Hover or focus a table row to highlight that leg on the map.
-  document.querySelectorAll(".legs-table tbody tr").forEach(function (tr) {
-    var i = +tr.getAttribute("data-leg");
-    function on() { highlight([i]); tr.classList.add("is-hl"); }
-    function off() { tr.classList.remove("is-hl"); update(); }
-    tr.addEventListener("mouseenter", on);
-    tr.addEventListener("mouseleave", off);
-  });
 })();

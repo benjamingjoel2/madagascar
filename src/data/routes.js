@@ -1,4 +1,4 @@
-// Driving-time map data.
+// Driving-times data (planner and tables on /map/).
 // `hours` is a realistic door-to-door range for a private vehicle with a
 // driver, including short stops but not sightseeing. All figures are
 // estimates to check: see FACTS-TO-VERIFY.md.

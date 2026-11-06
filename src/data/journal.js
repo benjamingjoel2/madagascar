@@ -10,7 +10,7 @@ export default [
     body: `
 <p>Antsirabe to Ranomafana is about 250 km. On a European motorway that is two and a half hours. In Madagascar it takes six or seven, and nobody is doing anything wrong.</p>
 <p>The main roads are paved but narrow, with potholes, single-lane bridges and steep switchbacks where the highlands drop to the rainforest. They are shared with zebu carts, cyclists, children walking to school, and taxi-brousses stopping wherever a passenger waves. Driving after dark is unwise, so each road day has to fit into daylight.</p>
-<p>That is why our <a href="/map/">driving-time map</a> shows hours first and kilometres second, and why it marks the places where a domestic flight saves a day. Flying back from Toliara instead of driving the RN7 twice saves about two and a half days. Flying to Morondava saves about a day and a half each way, although that route often has only about one flight a week.</p>
+<p>That is why our <a href="/map/">driving times</a> show hours first and kilometres second, and mark the places where a domestic flight saves a day. Flying back from Toliara instead of driving the RN7 twice saves about two and a half days. Flying to Morondava saves about a day and a half each way, although that route often has only about one flight a week.</p>
 <p>Flights cost more than the road and their schedules can change at short notice, so we usually fly one way and drive the other. That way you still see the country change from the window.</p>
 <h2>Our rule of thumb</h2>
 <p>No more than one full road day in a row without a two-night stop after it. Nobody comes to Madagascar to sit in a car. But the drive is part of the journey, and it goes better when you know what you are in for.</p>

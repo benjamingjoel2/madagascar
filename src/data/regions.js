@@ -1,4 +1,4 @@
-// Regions. `lon`/`lat` place each region on the driving-time map.
+// Regions. `lon`/`lat` give each region's coordinates (shown as text).
 // Every hour, month and closure here is listed in FACTS-TO-VERIFY.md.
 
 export default [
@@ -94,7 +94,7 @@ export default [
       "The open grassland of the Horombe plateau",
     ],
     gettingThere:
-      "Drive from Antananarivo. See the driving-time map for hours on each section.",
+      "Drive from Antananarivo. See the driving times for hours on each section.",
     bestMonths: "April to November",
     access: "open",
     accessNote:
