@@ -418,17 +418,20 @@ function home() {
     preload: preloadFor(photos.hero),
     body: `
 <section class="hero">
-  <div class="wrap hero__in">
-    <div class="hero__text">
-      <p class="mono hero__kicker">${t("Madagascar")} · ${esc(coords(tana))}</p>
-      <h1 class="hero__t">${esc(t(brand.tagline))}</h1>
-      <p class="hero__lead">${esc(t(brand.description))}</p>
-      <p class="actions"><a class="pill pill--gold" href="/journeys/">${t("Explore journeys")}</a> <a class="textlink" href="/map/">${t("Real driving times")}</a></p>
+  ${photos.hero ? figure("hero", { eager: true, cls: "hero__fig" }) : contour("hero", { cls: "hero__fig" })}
+  <div class="hero__top wrap">
+    <p class="mono">${t("Madagascar")}</p>
+    <p class="mono">${esc(coords(tana))}</p>
+  </div>
+  <div class="hero__bottom wrap">
+    <div class="hero__row">
+      <p class="mono hero__tag">${t("Slow overland journeys<br>for nature lovers")}</p>
+      <div class="hero__intro">
+        <p>${esc(t(brand.description))}</p>
+        <p class="actions"><a class="pill pill--light" href="/journeys/">${t("Explore journeys")} ${ARROW}</a> <a class="pill pill--ghost" href="/map/">${t("Real driving times")} ${ARROW}</a></p>
+      </div>
     </div>
-    <div class="hero__art">
-      <span class="hero__field" aria-hidden="true"></span>
-      ${figure("hero", { eager: true, cls: "hero__card", sizes: "(min-width: 56em) 34vw, 80vw" })}
-    </div>
+    <h1 class="wordmark">${esc(brand.name)}<span class="sr-only">: ${esc(t(brand.tagline))}</span></h1>
   </div>
 </section>
 
